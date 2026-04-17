@@ -24,7 +24,7 @@ export default function StackSchoolLanding() {
 
       <div className="relative z-10 flex flex-col min-h-screen">
       {/* Header / Navigation */}
-      <header className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 bg-white/60 backdrop-blur-md border-b border-white/40 shadow-sm transition-all">
+      <header className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-8 py-4 bg-white/60 backdrop-blur-md border-b border-white/40 shadow-sm transition-all">
         <div className="flex items-center">
           <Image 
             src="/stack_school.png" 
@@ -39,12 +39,12 @@ export default function StackSchoolLanding() {
         <nav className="hidden md:flex space-x-8 font-medium text-blue-950">
           <Link href="#courses" className="hover:text-orange-500 transition-colors">Courses</Link>
           <Link href="#about" className="hover:text-orange-500 transition-colors">About Us</Link>
-          <Link href="#mentors" className="hover:text-orange-500 transition-colors">Mentors</Link>
+          <Link href="mailto:stackschool7@gmail.com" className="hover:text-orange-500 transition-colors">Mentors</Link>
         </nav>
 
-        <button className="hidden md:block px-6 py-2.5 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300">
+        <Link href="mailto:stackschool7@gmail.com" className="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300">
           Enroll Now
-        </button>
+        </Link>
 
         {/* Mobile Menu Toggle Button */}
         <button 
@@ -63,15 +63,15 @@ export default function StackSchoolLanding() {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white/80 backdrop-blur-xl border-b border-white/40 shadow-sm px-8 py-5 space-y-4 absolute w-full z-40">
+        <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-white/40 shadow-sm px-4 py-5 space-y-4 absolute top-full left-0 w-full z-40">
           <nav className="flex flex-col space-y-4 font-medium text-blue-950">
             <Link href="#courses" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Courses</Link>
             <Link href="#about" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-            <Link href="#mentors" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Mentors</Link>
+            <Link href="mailto:stackschool7@gmail.com" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Mentors</Link>
           </nav>
-          <button className="w-full px-5 py-3 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 transition-colors">
+          <Link href="mailto:stackschool7@gmail.com" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center px-5 py-3 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 transition-colors">
             Enroll Now
-          </button>
+          </Link>
         </div>
       )}
 
@@ -94,12 +94,12 @@ export default function StackSchoolLanding() {
           </p>
           
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center relative z-10">
-            <button className="px-8 py-3.5 bg-blue-950 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-1 transition-all duration-300">
+            <Link href="#courses" className="inline-flex items-center justify-center px-8 py-3.5 bg-blue-950 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-1 transition-all duration-300">
               View Courses
-            </button>
-            <button className="px-8 py-3.5 bg-white/70 backdrop-blur-md text-orange-600 border border-orange-200 font-semibold rounded-xl shadow-sm hover:bg-white hover:border-orange-400 hover:-translate-y-1 transition-all duration-300">
+            </Link>
+            <Link href="mailto:stackschool7@gmail.com" className="inline-flex items-center justify-center px-8 py-3.5 bg-white/70 backdrop-blur-md text-orange-600 border border-orange-200 font-semibold rounded-xl shadow-sm hover:bg-white hover:border-orange-400 hover:-translate-y-1 transition-all duration-300">
               Contact Us
-            </button>
+            </Link>
           </div>
         </div>
       </main>
@@ -187,16 +187,22 @@ export default function StackSchoolLanding() {
       </section>
 
       {/* Extended Footer */}
-      <footer className="mt-auto relative z-10 w-full bg-white/40 backdrop-blur-lg border-t border-white/50 text-blue-950 py-10 px-8 flex flex-col md:flex-row items-center justify-between shadow-[0_-4px_32px_0_rgba(31,38,135,0.02)]">
-        <div className="flex items-center mb-4 md:mb-0">
-          <Image 
-            src="/stack_school.png" 
-            alt="Stack School Logo" 
-            width={120} 
-            height={32} 
-            className="h-8 w-auto mr-3 opacity-90 drop-shadow-sm" 
-          />
-          <span className="font-bold text-xl">Stack School</span>
+      <footer className="mt-auto relative z-10 w-full bg-white/40 backdrop-blur-lg border-t border-white/50 text-blue-950 py-10 px-4 md:px-8 flex flex-col md:flex-row items-center justify-between shadow-[0_-4px_32px_0_rgba(31,38,135,0.02)]">
+        <div className="flex flex-col items-center md:items-start mb-6 md:mb-0">
+          <div className="flex items-center mb-2">
+            <Image 
+              src="/stack_school.png" 
+              alt="Stack School Logo" 
+              width={120} 
+              height={32} 
+              className="h-8 w-auto mr-3 opacity-90 drop-shadow-sm" 
+            />
+            <span className="font-bold text-xl">Stack School</span>
+          </div>
+          <div className="flex flex-col text-center md:text-left text-slate-600 font-medium mt-1">
+            <a href="mailto:stackschool7@gmail.com" className="hover:text-orange-500 transition-colors">stackschool7@gmail.com</a>
+            <a href="tel:7075775019" className="hover:text-orange-500 transition-colors mt-1">+91 7075775019</a>
+          </div>
         </div>
         
         <p className="font-medium text-slate-600 mb-4 md:mb-0">&copy; {new Date().getFullYear()} Stack School. All rights reserved.</p>
