@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function StackSchoolLanding() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -24,18 +26,20 @@ export default function StackSchoolLanding() {
       {/* Header / Navigation */}
       <header className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 bg-white/60 backdrop-blur-md border-b border-white/40 shadow-sm transition-all">
         <div className="flex items-center">
-          <img 
+          <Image 
             src="/stack_school.png" 
             alt="Stack School Logo" 
+            width={150}
+            height={40}
             className="h-10 w-auto mr-3 drop-shadow-sm" 
           />
           <h1 className="text-2xl font-bold text-blue-950 tracking-tight">Stack School</h1>
         </div>
         
         <nav className="hidden md:flex space-x-8 font-medium text-blue-950">
-          <a href="#courses" className="hover:text-orange-500 transition-colors">Courses</a>
-          <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
-          <a href="#mentors" className="hover:text-orange-500 transition-colors">Mentors</a>
+          <Link href="#courses" className="hover:text-orange-500 transition-colors">Courses</Link>
+          <Link href="#about" className="hover:text-orange-500 transition-colors">About Us</Link>
+          <Link href="#mentors" className="hover:text-orange-500 transition-colors">Mentors</Link>
         </nav>
 
         <button className="hidden md:block px-6 py-2.5 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300">
@@ -61,9 +65,9 @@ export default function StackSchoolLanding() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white/80 backdrop-blur-xl border-b border-white/40 shadow-sm px-8 py-5 space-y-4 absolute w-full z-40">
           <nav className="flex flex-col space-y-4 font-medium text-blue-950">
-            <a href="#courses" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Courses</a>
-            <a href="#about" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
-            <a href="#mentors" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Mentors</a>
+            <Link href="#courses" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Courses</Link>
+            <Link href="#about" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+            <Link href="#mentors" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Mentors</Link>
           </nav>
           <button className="w-full px-5 py-3 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 transition-colors">
             Enroll Now
@@ -185,16 +189,22 @@ export default function StackSchoolLanding() {
       {/* Extended Footer */}
       <footer className="mt-auto relative z-10 w-full bg-white/40 backdrop-blur-lg border-t border-white/50 text-blue-950 py-10 px-8 flex flex-col md:flex-row items-center justify-between shadow-[0_-4px_32px_0_rgba(31,38,135,0.02)]">
         <div className="flex items-center mb-4 md:mb-0">
-          <img src="/stack_school.png" alt="Stack School" className="h-8 w-auto mr-3 opacity-90 drop-shadow-sm" />
+          <Image 
+            src="/stack_school.png" 
+            alt="Stack School Logo" 
+            width={120} 
+            height={32} 
+            className="h-8 w-auto mr-3 opacity-90 drop-shadow-sm" 
+          />
           <span className="font-bold text-xl">Stack School</span>
         </div>
         
         <p className="font-medium text-slate-600 mb-4 md:mb-0">&copy; {new Date().getFullYear()} Stack School. All rights reserved.</p>
         
         <div className="flex space-x-6 font-semibold text-slate-600">
-          <a href="#" className="hover:text-orange-500 transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-orange-500 transition-colors">Careers</a>
-          <a href="#" className="hover:text-orange-500 transition-colors">Terms</a>
+          <Link href="#" className="hover:text-orange-500 transition-colors">Privacy Policy</Link>
+          <Link href="#" className="hover:text-orange-500 transition-colors">Careers</Link>
+          <Link href="#" className="hover:text-orange-500 transition-colors">Terms</Link>
         </div>
       </footer>
 
