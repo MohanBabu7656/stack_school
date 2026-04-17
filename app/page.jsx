@@ -33,22 +33,22 @@ export default function StackSchoolLanding() {
             height={40}
             className="h-10 w-auto mr-3 drop-shadow-sm" 
           />
-          <h1 className="text-2xl font-bold text-blue-950 tracking-tight">Stack School</h1>
+          <h1 className="text-2xl font-bold text-orange-500 tracking-tight">Stack School</h1>
         </div>
         
         <nav className="hidden md:flex space-x-8 font-medium text-blue-950">
-          <Link href="#courses" className="hover:text-orange-500 transition-colors">Courses</Link>
-          <Link href="#about" className="hover:text-orange-500 transition-colors">About Us</Link>
-          <Link href="mailto:stackschool7@gmail.com" className="hover:text-orange-500 transition-colors">Mentors</Link>
+          <a href="#courses" className="hover:text-orange-500 transition-colors">Courses</a>
+          <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
+          <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
         </nav>
 
-        <Link href="mailto:stackschool7@gmail.com" className="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300">
+        <a href="mailto:stackschool7@gmail.com?subject=Course%20Inquiry&body=Hello%20Stack%20School%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20more%20information.%0D%0A%0D%0AName:%20%0D%0ACourse%20Interested:%20%0D%0AMobile%20Number:%20%0D%0A%0D%0A" className="hidden md:inline-flex items-center justify-center px-6 py-2.5 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300">
           Enroll Now
-        </Link>
+        </a>
 
         {/* Mobile Menu Toggle Button */}
         <button 
-          className="md:hidden p-2 text-blue-950 hover:text-orange-500 focus:outline-none transition-colors"
+          className="md:hidden p-2 ml-auto text-blue-950 hover:text-orange-500 focus:outline-none transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -65,13 +65,13 @@ export default function StackSchoolLanding() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-white/40 shadow-sm px-4 py-5 space-y-4 absolute top-full left-0 w-full z-40">
           <nav className="flex flex-col space-y-4 font-medium text-blue-950">
-            <Link href="#courses" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Courses</Link>
-            <Link href="#about" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-            <Link href="mailto:stackschool7@gmail.com" className="hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Mentors</Link>
+            <a href="#courses" className="block hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Courses</a>
+            <a href="#about" className="block hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+            <a href="#contact" className="block hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
           </nav>
-          <Link href="mailto:stackschool7@gmail.com" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center px-5 py-3 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 transition-colors">
+          <a href="mailto:stackschool7@gmail.com?subject=Course%20Inquiry&body=Hello%20Stack%20School%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20more%20information.%0D%0A%0D%0AName:%20%0D%0ACourse%20Interested:%20%0D%0AMobile%20Number:%20%0D%0A%0D%0A" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center px-5 py-3 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 transition-colors">
             Enroll Now
-          </Link>
+          </a>
         </div>
       )}
 
@@ -94,12 +94,12 @@ export default function StackSchoolLanding() {
           </p>
           
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center relative z-10">
-            <Link href="#courses" className="inline-flex items-center justify-center px-8 py-3.5 bg-blue-950 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-1 transition-all duration-300">
+            <a href="#courses" className="inline-flex items-center justify-center px-8 py-3.5 bg-blue-950 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-1 transition-all duration-300">
               View Courses
-            </Link>
-            <Link href="mailto:stackschool7@gmail.com" className="inline-flex items-center justify-center px-8 py-3.5 bg-white/70 backdrop-blur-md text-orange-600 border border-orange-200 font-semibold rounded-xl shadow-sm hover:bg-white hover:border-orange-400 hover:-translate-y-1 transition-all duration-300">
+            </a>
+            <a href="#contact" className="inline-flex items-center justify-center px-8 py-3.5 bg-white/70 backdrop-blur-md text-orange-600 border border-orange-200 font-semibold rounded-xl shadow-sm hover:bg-white hover:border-orange-400 hover:-translate-y-1 transition-all duration-300">
               Contact Us
-            </Link>
+            </a>
           </div>
         </div>
       </main>
@@ -186,6 +186,42 @@ export default function StackSchoolLanding() {
         </div>
       </section>
 
+      {/* Contact Information Section */}
+      <section id="contact" className="px-4 py-16 flex justify-center bg-white/40 backdrop-blur-md border-t border-white/50 relative z-10">
+        <div className="max-w-4xl w-full text-center">
+          <h3 className="text-4xl font-extrabold text-blue-950 mb-6 drop-shadow-sm">Get In Touch</h3>
+          <p className="text-lg text-slate-700 mb-10 font-medium">Have questions? We'd love to hear from you. Reach out to us directly or send us an email.</p>
+          
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+            {/* Email Block */}
+            <div className="flex items-center space-x-4 bg-white/70 p-5 rounded-2xl shadow-sm border border-white/60 w-full md:w-auto hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center shrink-0">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Email Us</p>
+                <a href="mailto:stackschool7@gmail.com?subject=Course%20Inquiry&body=Hello%20Stack%20School%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20more%20information.%0D%0A%0D%0AName:%20%0D%0ACourse%20Interested:%20%0D%0AMobile%20Number:%20%0D%0A%0D%0A" className="text-lg font-bold text-blue-950 hover:text-orange-500 transition-colors block">stackschool7@gmail.com</a>
+              </div>
+            </div>
+
+            {/* Phone Block */}
+            <div className="flex items-center space-x-4 bg-white/70 p-5 rounded-2xl shadow-sm border border-white/60 w-full md:w-auto hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center shrink-0">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              </div>
+              <div className="text-left">
+                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Call Us</p>
+                <a href="tel:7075775019" className="text-lg font-bold text-blue-950 hover:text-emerald-600 transition-colors block">+91 7075775019</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="mailto:stackschool7@gmail.com?subject=Course%20Inquiry&body=Hello%20Stack%20School%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20more%20information.%0D%0A%0D%0AName:%20%0D%0ACourse%20Interested:%20%0D%0AMobile%20Number:%20%0D%0A%0D%0A" className="mt-10 inline-flex items-center justify-center px-10 py-4 bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-1 transition-all duration-300">
+            Send an Inquiry Email
+          </a>
+        </div>
+      </section>
+
       {/* Extended Footer */}
       <footer className="mt-auto relative z-10 w-full bg-white/40 backdrop-blur-lg border-t border-white/50 text-blue-950 py-10 px-4 md:px-8 flex flex-col md:flex-row items-center justify-between shadow-[0_-4px_32px_0_rgba(31,38,135,0.02)]">
         <div className="flex flex-col items-center md:items-start mb-6 md:mb-0">
@@ -208,9 +244,9 @@ export default function StackSchoolLanding() {
         <p className="font-medium text-slate-600 mb-4 md:mb-0">&copy; {new Date().getFullYear()} Stack School. All rights reserved.</p>
         
         <div className="flex space-x-6 font-semibold text-slate-600">
-          <Link href="#" className="hover:text-orange-500 transition-colors">Privacy Policy</Link>
-          <Link href="#" className="hover:text-orange-500 transition-colors">Careers</Link>
-          <Link href="#" className="hover:text-orange-500 transition-colors">Terms</Link>
+          <a href="#" className="hover:text-orange-500 transition-colors">Privacy Policy</a>
+          <a href="#" className="hover:text-orange-500 transition-colors">Careers</a>
+          <a href="#" className="hover:text-orange-500 transition-colors">Terms</a>
         </div>
       </footer>
 
