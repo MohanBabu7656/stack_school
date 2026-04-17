@@ -61,21 +61,21 @@ export default function StackSchoolLanding() {
             )}
           </svg>
         </button>
-      </header>
 
-      {/* Mobile Menu Dropdown */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-white/40 shadow-sm px-4 py-5 space-y-4 absolute top-full left-0 w-full z-40">
-          <nav className="flex flex-col space-y-4 font-medium text-blue-950">
-            <a href="#courses" className="block hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Courses</a>
-            <a href="#about" className="block hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
-            <a href="#contact" className="block hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
-          </nav>
-          <a href="mailto:stackschool7@gmail.com?subject=Course%20Inquiry&body=Hello%20Stack%20School%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20more%20information.%0D%0A%0D%0AName:%20%0D%0ACourse%20Interested:%20%0D%0AMobile%20Number:%20%0D%0A%0D%0A" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center px-5 py-3 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 transition-colors">
-            Enroll Now
-          </a>
-        </div>
-      )}
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-white/40 shadow-sm px-4 py-5 space-y-4 absolute top-full left-0 w-full z-40">
+            <nav className="flex flex-col space-y-4 font-medium text-blue-950">
+              <a href="#courses" className="block hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Courses</a>
+              <a href="#about" className="block hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+              <a href="#contact" className="block hover:text-orange-500 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</a>
+            </nav>
+            <a href="mailto:stackschool7@gmail.com?subject=Course%20Inquiry&body=Hello%20Stack%20School%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20more%20information.%0D%0A%0D%0AName:%20%0D%0ACourse%20Interested:%20%0D%0AMobile%20Number:%20%0D%0A%0D%0A" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center px-5 py-3 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 transition-colors">
+              Enroll Now
+            </a>
+          </div>
+        )}
+      </header>
 
       {/* Hero Section */}
       <main className="flex-grow flex flex-col items-center justify-center text-center px-4 py-20 md:py-32">
