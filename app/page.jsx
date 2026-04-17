@@ -33,7 +33,9 @@ export default function StackSchoolLanding() {
             height={40}
             className="h-10 w-auto mr-3 drop-shadow-sm" 
           />
-          <h1 className="text-2xl font-bold text-orange-500 tracking-tight">Stack School</h1>
+          <h1 className="text-2xl font-bold tracking-tight">
+            <span className="text-blue-950">Stack</span> <span className="text-orange-500">School</span>
+          </h1>
         </div>
         
         <nav className="hidden md:flex space-x-8 font-medium text-blue-950">
@@ -82,7 +84,7 @@ export default function StackSchoolLanding() {
           <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/40 to-transparent pointer-events-none"></div>
 
           <h2 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-sm text-blue-950">
-            Launch Your Tech Career <br/> with <span className="text-blue-950">Stack</span> <span className="text-orange-500">School</span>
+            Launch Your Tech Career <br/> with <span className="text-orange-500">Stack</span> <span className="text-blue-950">School</span>
           </h2>
           
           <p className="text-xl md:text-2xl text-emerald-600 font-bold mb-8 tracking-widest uppercase drop-shadow-sm">
