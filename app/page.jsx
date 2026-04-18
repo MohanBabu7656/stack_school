@@ -3,9 +3,26 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useFormState, useFormStatus } from 'react-dom';
+import { motion } from 'framer-motion';
+import { captureLead } from './actions';
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button 
+      type="submit" 
+      disabled={pending}
+      className="px-8 py-4 bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-orange-500/40 hover:bg-orange-400 hover:-translate-y-1 transition-all duration-300 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      {pending ? 'Sending...' : 'Get My Roadmap'}
+    </button>
+  );
+}
 
 export default function StackSchoolLanding() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [formState, formAction] = useFormState(captureLead, { success: false, message: '' });
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans flex flex-col relative overflow-hidden selection:bg-orange-500 selection:text-white">
@@ -103,8 +120,38 @@ export default function StackSchoolLanding() {
               Contact Us
             </a>
           </div>
+
+          {/* Impact Metrics Banner */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-white/40 relative z-10">
+            <div><h4 className="text-3xl md:text-4xl font-black text-blue-950">92%</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Students Placed</p></div>
+            <div><h4 className="text-3xl md:text-4xl font-black text-emerald-600">+$35k</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Avg. Salary Increase</p></div>
+            <div><h4 className="text-3xl md:text-4xl font-black text-orange-500">50+</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Hiring Partners</p></div>
+            <div><h4 className="text-3xl md:text-4xl font-black text-blue-950">1M+</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Lines of Code</p></div>
+          </div>
         </div>
       </main>
+
+      {/* Tech Stack Marquee */}
+      <section className="py-8 bg-white/20 backdrop-blur-sm border-y border-white/40 overflow-hidden flex relative z-10">
+        <motion.div 
+          className="flex w-[200%] items-center justify-around text-xl md:text-2xl font-bold text-blue-950/60 uppercase tracking-widest whitespace-nowrap space-x-12"
+          animate={{ x: [0, "-50%"] }}
+          transition={{ repeat: Infinity, ease: "linear", duration: 15 }}
+        >
+          <span>React</span><span className="text-orange-400">•</span>
+          <span>Angular</span><span className="text-orange-400">•</span>
+          <span>Spring Boot</span><span className="text-orange-400">•</span>
+          <span>Django</span><span className="text-orange-400">•</span>
+          <span>FastAPI</span><span className="text-orange-400">•</span>
+          <span>AWS</span><span className="text-orange-400">•</span>
+          <span>React</span><span className="text-orange-400">•</span>
+          <span>Angular</span><span className="text-orange-400">•</span>
+          <span>Spring Boot</span><span className="text-orange-400">•</span>
+          <span>Django</span><span className="text-orange-400">•</span>
+          <span>FastAPI</span><span className="text-orange-400">•</span>
+          <span>AWS</span>
+        </motion.div>
+      </section>
 
       {/* Core Methodology */}
       <section id="about" className="px-4 py-12 flex justify-center">
@@ -188,58 +235,39 @@ export default function StackSchoolLanding() {
         </div>
       </section>
 
-      {/* Meet Your Mentors */}
-      <section id="mentors" className="px-4 py-16 flex justify-center relative z-10 bg-white/20 backdrop-blur-md border-y border-white/40">
-        <div className="max-w-5xl w-full">
-          <h3 className="text-4xl font-extrabold text-center text-blue-950 mb-12 drop-shadow-sm">Meet Your Mentors</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 bg-white/60 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-24 h-24 rounded-full bg-blue-200 shrink-0 overflow-hidden border-4 border-white shadow-sm flex items-center justify-center">
-                 <svg className="w-12 h-12 text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
+      {/* Contact Information Section */}
+      <section id="contact" className="px-4 py-16 flex justify-center bg-white/40 backdrop-blur-md border-t border-white/50 relative z-10">
+        <div className="max-w-4xl w-full text-center">
+          <h3 className="text-4xl font-extrabold text-blue-950 mb-6 drop-shadow-sm">Get In Touch</h3>
+          <p className="text-lg text-slate-700 mb-10 font-medium">Have questions? We'd love to hear from you. Reach out to us directly or send us an email.</p>
+          
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+            {/* Email Block */}
+            <div className="flex items-center space-x-4 bg-white/70 p-5 rounded-2xl shadow-sm border border-white/60 w-full md:w-auto hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center shrink-0">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
               </div>
-              <div className="text-center sm:text-left">
-                <h4 className="text-2xl font-bold text-blue-950">Sarah Jenkins</h4>
-                <p className="text-orange-600 font-bold text-sm mb-3">Former Senior Java Developer at Amazon</p>
-                <p className="text-slate-700 font-medium text-sm leading-relaxed">Brings 10+ years of enterprise architecture experience to help you master Spring Boot and cloud-native backend systems.</p>
+              <div className="text-left">
+                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Email Us</p>
+                <a href="mailto:stackschool7@gmail.com?subject=Course%20Inquiry&body=Hello%20Stack%20School%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20more%20information.%0D%0A%0D%0AName:%20%0D%0ACourse%20Interested:%20%0D%0AMobile%20Number:%20%0D%0A%0D%0A" className="text-lg font-bold text-blue-950 hover:text-orange-500 transition-colors block">stackschool7@gmail.com</a>
               </div>
             </div>
-            
-            <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 bg-white/60 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-24 h-24 rounded-full bg-emerald-200 shrink-0 overflow-hidden border-4 border-white shadow-sm flex items-center justify-center">
-                 <svg className="w-12 h-12 text-emerald-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
+
+            {/* Phone Block */}
+            <div className="flex items-center space-x-4 bg-white/70 p-5 rounded-2xl shadow-sm border border-white/60 w-full md:w-auto hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center shrink-0">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
               </div>
-              <div className="text-center sm:text-left">
-                <h4 className="text-2xl font-bold text-blue-950">David Chen</h4>
-                <p className="text-emerald-600 font-bold text-sm mb-3">Lead Python Engineer at Stripe</p>
-                <p className="text-slate-700 font-medium text-sm leading-relaxed">Expert in data-driven backends and scalable integrations using Django, FastAPI, and robust AWS infrastructure.</p>
+              <div className="text-left">
+                <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Call Us</p>
+                <a href="tel:7075775019" className="text-lg font-bold text-blue-950 hover:text-emerald-600 transition-colors block">+91 7075775019</a>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Lead Magnet */}
-      <section className="px-4 py-20 flex justify-center relative z-10">
-        <div className="max-w-4xl w-full text-center bg-blue-950 rounded-3xl p-10 md:p-16 shadow-2xl shadow-blue-900/40 relative overflow-hidden border border-blue-800">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 blur-3xl rounded-full pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/20 blur-3xl rounded-full pointer-events-none"></div>
-          
-          <h3 className="text-3xl md:text-5xl font-extrabold text-white mb-6 relative z-10 drop-shadow-md">Kickstart Your Tech Career</h3>
-          <p className="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto relative z-10 font-medium">
-            Download our <span className="text-orange-400 font-bold">Free Python vs. Java Career Roadmap</span> and discover the path that aligns with your goals.
-          </p>
-          
-          <form className="flex flex-col sm:flex-row max-w-xl mx-auto relative z-10 gap-4" onSubmit={(e) => e.preventDefault()}>
-            <input 
-              type="email" 
-              placeholder="Enter your email address" 
-              className="flex-grow px-6 py-4 rounded-xl bg-white/10 border border-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all font-medium"
-              required
-            />
-            <button type="submit" className="px-8 py-4 bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-orange-500/40 hover:bg-orange-400 hover:-translate-y-1 transition-all duration-300 whitespace-nowrap">
-              Get My Roadmap
-            </button>
-          </form>
+          <a href="mailto:stackschool7@gmail.com?subject=Course%20Inquiry&body=Hello%20Stack%20School%20Team,%0D%0A%0D%0AI%20would%20like%20to%20get%20more%20information.%0D%0A%0D%0AName:%20%0D%0ACourse%20Interested:%20%0D%0AMobile%20Number:%20%0D%0A%0D%0A" className="mt-10 inline-flex items-center justify-center px-10 py-4 bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-orange-600 hover:-translate-y-1 transition-all duration-300">
+            Send an Inquiry Email
+          </a>
         </div>
       </section>
 
@@ -262,7 +290,7 @@ export default function StackSchoolLanding() {
           </div>
         </div>
         
-        <p className="font-medium text-slate-600 mb-4 md:mb-0">&copy; 2026 Stack School. All rights reserved.</p>
+        <p className="font-medium text-slate-600 mb-4 md:mb-0">&copy; {new Date().getFullYear()} Stack School. All rights reserved.</p>
         
         <div className="flex space-x-6 font-semibold text-slate-600">
           <a href="#" className="hover:text-orange-500 transition-colors">Privacy Policy</a>
