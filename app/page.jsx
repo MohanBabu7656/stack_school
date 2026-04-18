@@ -1,5 +1,5 @@
-import Dashboard from '../Dashboard';
+import Landing from './Landing';
 
-export default function DashboardPage() {
-  return <Dashboard />;
+export default function StackSchoolLanding() {
+  return <Landing />;
 }
