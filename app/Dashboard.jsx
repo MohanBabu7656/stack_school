@@ -49,8 +49,8 @@ export default async function Dashboard() {
             </div>
           </div>
           <div className="flex space-x-4">
-            <button className="px-8 py-3 bg-blue-950 text-white font-bold rounded-xl shadow-lg shadow-blue-900/30 hover:bg-blue-900 hover:-translate-y-0.5 transition-all duration-300">Continue Learning</button>
-            <button className="px-8 py-3 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl shadow-sm hover:bg-slate-50 transition-all duration-300">View Syllabus</button>
+            <a href="#modules" className="px-8 py-3 bg-blue-950 text-white font-bold rounded-xl shadow-lg shadow-blue-900/30 hover:bg-blue-900 hover:-translate-y-0.5 transition-all duration-300 text-center">Continue Learning</a>
+            <a href="/syllabus.pdf" target="_blank" className="px-8 py-3 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl shadow-sm hover:bg-slate-50 transition-all duration-300 text-center">View Syllabus</a>
           </div>
         </div>
 
@@ -62,11 +62,11 @@ export default async function Dashboard() {
             <h3 className="text-2xl font-bold mb-2 relative z-10">{studentData.nextSession.topic}</h3>
             <p className="text-blue-200 font-medium mb-6 relative z-10">{studentData.nextSession.date}<br/>Mentored by {studentData.nextSession.mentor}</p>
           </div>
-          <button className="w-full py-3 bg-orange-500 hover:bg-orange-400 text-white font-bold rounded-xl shadow-lg shadow-orange-500/40 hover:-translate-y-0.5 transition-all duration-300 relative z-10">Join Zoom Room</button>
+          <a href="https://zoom.us" target="_blank" rel="noopener noreferrer" className="block text-center w-full py-3 bg-orange-500 hover:bg-orange-400 text-white font-bold rounded-xl shadow-lg shadow-orange-500/40 hover:-translate-y-0.5 transition-all duration-300 relative z-10">Join Zoom Room</a>
         </div>
       </div>
 
-      <h3 className="text-2xl font-bold text-blue-950 mb-6 drop-shadow-sm">Your Modules</h3>
+      <h3 id="modules" className="text-2xl font-bold text-blue-950 mb-6 drop-shadow-sm">Your Modules</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {studentData.modules.map((module, i) => (
           <div key={i} className="bg-white/40 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.03)] rounded-2xl p-6 hover:-translate-y-1 hover:bg-white/50 transition-all duration-300 cursor-pointer">

@@ -22,8 +22,8 @@ export default function Footer() {
       </div>
       <p className="font-medium text-slate-600 mb-4 md:mb-0">&copy; {new Date().getFullYear()} Stack School. All rights reserved.</p>
       <div className="flex space-x-6 font-semibold text-slate-600">
-        <a href="#" className="hover:text-orange-500 transition-colors">Privacy Policy</a>
-        <a href="#" className="hover:text-orange-500 transition-colors">Terms of Service</a>
+        <a href="/privacy" className="hover:text-orange-500 transition-colors">Privacy Policy</a>
+        <a href="/terms" className="hover:text-orange-500 transition-colors">Terms of Service</a>
       </div>
     </footer>
   );

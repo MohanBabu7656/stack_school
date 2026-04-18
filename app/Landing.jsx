@@ -108,7 +108,7 @@ export default function Landing() {
                 <li className="flex items-center"><span className="mr-3 text-emerald-500 font-bold">✓</span> React & Modern Frontend</li>
                 <li className="flex items-center"><span className="mr-3 text-emerald-500 font-bold">✓</span> Cloud Deployment & CI/CD</li>
               </ul>
-              <button className="w-full py-3.5 bg-white/80 border-2 border-blue-950 text-blue-950 font-bold rounded-xl hover:bg-blue-950 hover:text-white transition-colors duration-300 shadow-sm">Explore Python Stack</button>
+              <a href="#roadmap" className="block text-center w-full py-3.5 bg-white/80 border-2 border-blue-950 text-blue-950 font-bold rounded-xl hover:bg-blue-950 hover:text-white transition-colors duration-300 shadow-sm">Explore Python Stack</a>
             </div>
             <div className="bg-white/60 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-8 hover:shadow-orange-500/20 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-100/40 to-transparent -z-10 pointer-events-none"></div>
@@ -119,7 +119,7 @@ export default function Landing() {
                 <li className="flex items-center"><span className="mr-3 text-orange-500 font-bold">✓</span> Angular & Scalable UI</li>
                 <li className="flex items-center"><span className="mr-3 text-orange-500 font-bold">✓</span> Advanced Database Design</li>
               </ul>
-              <button className="w-full py-3.5 bg-white/80 border-2 border-blue-950 text-blue-950 font-bold rounded-xl hover:bg-blue-950 hover:text-white transition-colors duration-300 shadow-sm">Explore Java Stack</button>
+              <a href="#roadmap" className="block text-center w-full py-3.5 bg-white/80 border-2 border-blue-950 text-blue-950 font-bold rounded-xl hover:bg-blue-950 hover:text-white transition-colors duration-300 shadow-sm">Explore Java Stack</a>
             </div>
           </div>
         </div>
@@ -141,7 +141,7 @@ export default function Landing() {
         </div>
       </section>
 
-      <section className="px-4 py-20 flex justify-center relative z-10">
+      <section id="roadmap" className="px-4 py-20 flex justify-center relative z-10">
         <div className="max-w-4xl w-full text-center bg-blue-950 rounded-3xl p-10 md:p-16 shadow-2xl shadow-blue-900/40 relative overflow-hidden border border-blue-800">
           <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 blur-3xl rounded-full pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/20 blur-3xl rounded-full pointer-events-none"></div>
