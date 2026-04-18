@@ -3,7 +3,7 @@
 import React from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
 import { motion } from 'framer-motion';
-import { captureLead } from '../actions';
+import { captureLead } from './actions';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
