@@ -37,6 +37,7 @@ export default function Header() {
             <Link href="/courses" className={`transition-colors ${pathname.startsWith('/courses') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Courses</Link>
             <Link href="/placements" className={`transition-colors ${pathname.startsWith('/placements') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Placements</Link>
             <Link href="/about" className={`transition-colors ${pathname === '/about' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>About Us</Link>
+            <Link href="/contact" className={`transition-colors ${pathname === '/contact' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Contact</Link>
           </>
         ) : (
           <span className="text-orange-500 font-bold tracking-wide">Career Tools</span>
@@ -83,6 +84,7 @@ export default function Header() {
                 <Link href="/courses" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname.startsWith('/courses') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Courses</Link>
                 <Link href="/placements" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname.startsWith('/placements') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Placements</Link>
                 <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname === '/about' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>About Us</Link>
+                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname === '/contact' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Contact</Link>
                 <hr className="border-slate-200 border-dashed" />
               </>
             )}
