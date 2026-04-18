@@ -3,6 +3,7 @@
 import React from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { captureLead } from './actions';
 
 function SubmitButton() {
@@ -34,8 +35,8 @@ export default function Landing() {
             Master modern web development, build real-world projects, and accelerate your career with our industry-leading coding bootcamps.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center relative z-10">
-            <a href="#courses" className="inline-flex items-center justify-center px-8 py-3.5 bg-blue-950 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:-translate-y-1 transition-all duration-300">View Courses</a>
-            <a href="#mentors" className="inline-flex items-center justify-center px-8 py-3.5 bg-white/70 backdrop-blur-md text-orange-600 border border-orange-200 font-semibold rounded-xl hover:bg-white hover:-translate-y-1 transition-all duration-300">Meet Mentors</a>
+            <Link href="/courses" className="inline-flex items-center justify-center px-8 py-3.5 bg-blue-950 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:-translate-y-1 transition-all duration-300">View Courses</Link>
+            <Link href="/about" className="inline-flex items-center justify-center px-8 py-3.5 bg-white/70 backdrop-blur-md text-orange-600 border border-orange-200 font-semibold rounded-xl hover:bg-white hover:-translate-y-1 transition-all duration-300">About Us</Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-white/40 relative z-10">
             <div><h4 className="text-3xl md:text-4xl font-black text-blue-950">92%</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Students Placed</p></div>
@@ -63,66 +64,6 @@ export default function Landing() {
           <span>FastAPI</span><span className="text-orange-400">•</span>
           <span>AWS</span>
         </motion.div>
-      </section>
-
-      <section id="about" className="px-4 py-16 flex justify-center">
-        <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white/40 backdrop-blur-lg border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] rounded-3xl p-8 hover:-translate-y-2 hover:bg-white/50 transition-all duration-300 group">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-50 text-blue-900 rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z"></path></svg>
-            </div>
-            <h3 className="text-2xl font-bold text-blue-950 mb-3">Structured Path</h3>
-            <p className="text-slate-700 font-medium">Follow an organized, step-by-step curriculum to go from beginner to job-ready developer.</p>
-          </div>
-          <div className="bg-white/40 backdrop-blur-lg border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] rounded-3xl p-8 hover:-translate-y-2 hover:bg-white/50 transition-all duration-300 group relative">
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-orange-300/40 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <div className="w-16 h-16 bg-gradient-to-br from-orange-100 to-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
-              <span className="text-3xl font-light">{"{ }"}</span>
-            </div>
-            <h3 className="text-2xl font-bold text-blue-950 mb-3">Real-World Experience</h3>
-            <p className="text-slate-700 font-medium">Build practical, portfolio-ready projects that solve actual industry problems.</p>
-          </div>
-          <div className="bg-white/40 backdrop-blur-lg border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] rounded-3xl p-8 hover:-translate-y-2 hover:bg-white/50 transition-all duration-300 group relative">
-             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-emerald-300/40 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-            <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-            </div>
-            <h3 className="text-2xl font-bold text-blue-950 mb-3">Accelerate Your Future</h3>
-            <p className="text-slate-700 font-medium">Gain access to expert mentorship, interview preparation, and a vast network of hiring partners.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="courses" className="px-4 py-16 flex justify-center">
-        <div className="max-w-5xl w-full bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.06)] rounded-3xl p-8 md:p-12 relative overflow-hidden">
-          <div className="absolute top-[-20%] right-[-10%] w-64 h-64 bg-orange-300/20 blur-3xl rounded-full pointer-events-none"></div>
-          <div className="absolute bottom-[-20%] left-[-10%] w-64 h-64 bg-emerald-300/20 blur-3xl rounded-full pointer-events-none"></div>
-          <h3 className="text-4xl font-extrabold text-center text-blue-950 mb-12 drop-shadow-sm">Featured Stacks</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-            <div className="bg-white/60 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-8 hover:shadow-emerald-500/20 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/40 to-transparent -z-10 pointer-events-none"></div>
-              <div className="flex justify-between items-start mb-4"><h4 className="text-3xl font-bold text-blue-950">Python Fullstack</h4><span className="text-emerald-600 font-mono font-bold bg-emerald-100/80 px-3 py-1 rounded-lg">{'< py >'}</span></div>
-              <p className="text-orange-600 font-bold mb-5 text-lg">Data-Driven Web Applications</p>
-              <ul className="text-slate-700 font-medium space-y-3 mb-8">
-                <li className="flex items-center"><span className="mr-3 text-emerald-500 font-bold">✓</span> Django & FastAPI</li>
-                <li className="flex items-center"><span className="mr-3 text-emerald-500 font-bold">✓</span> React & Modern Frontend</li>
-                <li className="flex items-center"><span className="mr-3 text-emerald-500 font-bold">✓</span> Cloud Deployment & CI/CD</li>
-              </ul>
-              <a href="#roadmap" className="block text-center w-full py-3.5 bg-white/80 border-2 border-blue-950 text-blue-950 font-bold rounded-xl hover:bg-blue-950 hover:text-white transition-colors duration-300 shadow-sm">Explore Python Stack</a>
-            </div>
-            <div className="bg-white/60 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-8 hover:shadow-orange-500/20 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-100/40 to-transparent -z-10 pointer-events-none"></div>
-              <div className="flex justify-between items-start mb-4"><h4 className="text-3xl font-bold text-blue-950">Java Fullstack</h4><span className="text-orange-600 font-mono font-bold bg-orange-100/80 px-3 py-1 rounded-lg">{'< java >'}</span></div>
-              <p className="text-orange-600 font-bold mb-5 text-lg">Enterprise-Grade Architecture</p>
-              <ul className="text-slate-700 font-medium space-y-3 mb-8">
-                <li className="flex items-center"><span className="mr-3 text-orange-500 font-bold">✓</span> Spring Boot & Microservices</li>
-                <li className="flex items-center"><span className="mr-3 text-orange-500 font-bold">✓</span> Angular & Scalable UI</li>
-                <li className="flex items-center"><span className="mr-3 text-orange-500 font-bold">✓</span> Advanced Database Design</li>
-              </ul>
-              <a href="#roadmap" className="block text-center w-full py-3.5 bg-white/80 border-2 border-blue-950 text-blue-950 font-bold rounded-xl hover:bg-blue-950 hover:text-white transition-colors duration-300 shadow-sm">Explore Java Stack</a>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section id="mentors" className="px-4 py-16 flex justify-center relative z-10 bg-white/20 backdrop-blur-md border-y border-white/40">
