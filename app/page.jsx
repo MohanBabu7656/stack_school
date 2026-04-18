@@ -1,31 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useFormState, useFormStatus } from 'react-dom';
-import { motion } from 'framer-motion';
-import { captureLead } from './actions';
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <button 
-      type="submit" 
-      disabled={pending}
-      className="px-8 py-4 bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-orange-500/40 hover:bg-orange-400 hover:-translate-y-1 transition-all duration-300 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
-    >
-      {pending ? 'Sending...' : 'Get My Roadmap'}
-    </button>
-  );
-}
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Landing from './components/Landing';
+import Dashboard from './components/Dashboard';
 
 export default function StackSchoolLanding() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [formState, formAction] = useFormState(captureLead, { success: false, message: '' });
+  const [currentView, setCurrentView] = useState('landing');
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans flex flex-col relative overflow-hidden selection:bg-orange-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 font-sans flex flex-col relative overflow-x-hidden selection:bg-orange-500 selection:text-white">
       
       {/* Background Gradients & Textures for Glassmorphism Context */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
