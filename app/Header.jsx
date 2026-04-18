@@ -2,15 +2,20 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-export default function Header({ currentView, setCurrentView }) {
+export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isLanding = pathname === '/';
 
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-8 py-4 bg-white/60 backdrop-blur-md border-b border-white/40 shadow-sm transition-all">
-      <div 
+      <Link 
+        href="/"
         className="flex items-center cursor-pointer hover:opacity-80 transition-opacity" 
-        onClick={() => setCurrentView('landing')}
+        onClick={() => setIsMobileMenuOpen(false)}
       >
         <Image 
           src="/stack_school.png" 
@@ -22,10 +27,10 @@ export default function Header({ currentView, setCurrentView }) {
         <h1 className="text-2xl font-bold tracking-tight">
           <span className="text-blue-950">Stack</span> <span className="text-orange-500">School</span>
         </h1>
-      </div>
+      </Link>
       
       <nav className="hidden md:flex items-center space-x-8 font-medium text-blue-950">
-        {currentView === 'landing' ? (
+        {isLanding ? (
           <>
             <a href="#courses" className="hover:text-orange-500 transition-colors">Courses</a>
             <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
@@ -37,13 +42,13 @@ export default function Header({ currentView, setCurrentView }) {
       </nav>
 
       <div className="hidden md:flex items-center space-x-4">
-        <button 
-          onClick={() => setCurrentView(currentView === 'landing' ? 'dashboard' : 'landing')} 
+        <Link 
+          href={isLanding ? "/dashboard" : "/"} 
           className="text-blue-950 font-semibold hover:text-orange-500 transition-colors"
         >
-          {currentView === 'landing' ? 'Go to Dashboard' : 'Back to Home'}
-        </button>
-        {currentView === 'landing' && (
+          {isLanding ? 'Go to Dashboard' : 'Back to Home'}
+        </Link>
+        {isLanding && (
           <a href="#courses" className="inline-flex items-center justify-center px-6 py-2.5 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300">
             Enroll Now
           </a>
@@ -64,7 +69,7 @@ export default function Header({ currentView, setCurrentView }) {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-white/40 shadow-sm px-4 py-5 space-y-4 absolute top-full left-0 w-full z-40">
           <nav className="flex flex-col space-y-4 font-medium text-blue-950">
-            <button onClick={() => { setCurrentView(currentView === 'landing' ? 'dashboard' : 'landing'); setIsMobileMenuOpen(false); }} className="block text-left hover:text-orange-500 transition-colors font-bold">{currentView === 'landing' ? 'Go to Dashboard' : 'Back to Home'}</button>
+            <Link href={isLanding ? "/dashboard" : "/"} onClick={() => setIsMobileMenuOpen(false)} className="block text-left hover:text-orange-500 transition-colors font-bold">{isLanding ? 'Go to Dashboard' : 'Back to Home'}</Link>
           </nav>
         </div>
       )}
