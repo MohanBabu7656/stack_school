@@ -9,7 +9,7 @@ import { track } from '@vercel/analytics';
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isDashboard = pathname.startsWith('/dashboard');
+  const isCareerTools = pathname.startsWith('/career-tools');
 
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-8 py-4 bg-white/60 backdrop-blur-md border-b border-white/40 shadow-sm transition-all">
@@ -31,7 +31,7 @@ export default function Header() {
       </Link>
       
       <nav className="hidden md:flex items-center space-x-8 font-medium text-blue-950">
-        {!isDashboard ? (
+        {!isCareerTools ? (
           <>
             <Link href="/" className={`transition-colors ${pathname === '/' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Home</Link>
             <Link href="/courses" className={`transition-colors ${pathname.startsWith('/courses') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Courses</Link>
@@ -39,18 +39,18 @@ export default function Header() {
             <Link href="/about" className={`transition-colors ${pathname === '/about' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>About Us</Link>
           </>
         ) : (
-          <span className="text-orange-500 font-bold tracking-wide">Student Dashboard</span>
+          <span className="text-orange-500 font-bold tracking-wide">Career Tools</span>
         )}
       </nav>
 
       <div className="hidden md:flex items-center space-x-4">
         <Link 
-          href={!isDashboard ? "/dashboard" : "/"} 
+          href={!isCareerTools ? "/career-tools" : "/"} 
           className="text-blue-950 font-semibold hover:text-orange-500 transition-colors"
         >
-          {!isDashboard ? 'Go to Dashboard' : 'Back to Home'}
+          {!isCareerTools ? 'Career Tools' : 'Back to Home'}
         </Link>
-        {!isDashboard && (
+        {!isCareerTools && (
           <a 
             href={process.env.NEXT_PUBLIC_ENROLLMENT_FORM_URL || "#"} 
             target="_blank" 
@@ -77,7 +77,7 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-xl border-b border-white/40 shadow-sm px-4 py-5 space-y-4 absolute top-full left-0 w-full z-40">
           <nav className="flex flex-col space-y-4 font-medium text-blue-950">
-            {!isDashboard && (
+            {!isCareerTools && (
               <>
                 <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname === '/' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Home</Link>
                 <Link href="/courses" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname.startsWith('/courses') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Courses</Link>
@@ -86,8 +86,8 @@ export default function Header() {
                 <hr className="border-slate-200 border-dashed" />
               </>
             )}
-            <Link href={!isDashboard ? "/dashboard" : "/"} onClick={() => setIsMobileMenuOpen(false)} className="block text-left hover:text-orange-500 transition-colors font-bold">{!isDashboard ? 'Go to Dashboard' : 'Back to Home'}</Link>
-            {!isDashboard && <a 
+            <Link href={!isCareerTools ? "/career-tools" : "/"} onClick={() => setIsMobileMenuOpen(false)} className="block text-left hover:text-orange-500 transition-colors font-bold">{!isCareerTools ? 'Career Tools' : 'Back to Home'}</Link>
+            {!isCareerTools && <a 
               href={process.env.NEXT_PUBLIC_ENROLLMENT_FORM_URL || "#"} 
               target="_blank" 
               rel="noopener noreferrer" 
