@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  /* Standard Firefox scrollbar styling (Thumb Track) */
+  scrollbar-width: thin;
+  scrollbar-color: #f97316 #172554; 
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #172554; /* text-blue-950 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f97316; /* text-orange-500 */
+  border-radius: 6px;
+  border: 2px solid #172554; /* Creates a subtle padded look inside the track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ea580c; /* text-orange-600 */
+}

@@ -1,14 +1,35 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const pathname = usePathname();
   const isLanding = pathname === '/';
+
+  useEffect(() => {
+    if (!isLanding) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -60% 0px' } // Triggers when the section is nicely framed in the view
+    );
+
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => sections.forEach((section) => observer.unobserve(section));
+  }, [isLanding]);
 
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-8 py-4 bg-white/60 backdrop-blur-md border-b border-white/40 shadow-sm transition-all">
@@ -32,9 +53,9 @@ export default function Header() {
       <nav className="hidden md:flex items-center space-x-8 font-medium text-blue-950">
         {isLanding ? (
           <>
-            <a href="#courses" className="hover:text-orange-500 transition-colors">Courses</a>
-            <a href="#about" className="hover:text-orange-500 transition-colors">About Us</a>
-            <a href="#mentors" className="hover:text-orange-500 transition-colors">Mentors</a>
+            <a href="#courses" className={`transition-colors ${activeSection === 'courses' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Courses</a>
+            <a href="#about" className={`transition-colors ${activeSection === 'about' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>About Us</a>
+            <a href="#mentors" className={`transition-colors ${activeSection === 'mentors' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Mentors</a>
           </>
         ) : (
           <span className="text-orange-500 font-bold tracking-wide">Student Dashboard</span>
@@ -71,9 +92,9 @@ export default function Header() {
           <nav className="flex flex-col space-y-4 font-medium text-blue-950">
             {isLanding && (
               <>
-                <a href="#courses" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-orange-500 transition-colors">Courses</a>
-                <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-orange-500 transition-colors">About Us</a>
-                <a href="#mentors" onClick={() => setIsMobileMenuOpen(false)} className="block hover:text-orange-500 transition-colors">Mentors</a>
+                <a href="#courses" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${activeSection === 'courses' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Courses</a>
+                <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${activeSection === 'about' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>About Us</a>
+                <a href="#mentors" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${activeSection === 'mentors' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Mentors</a>
                 <hr className="border-slate-200 border-dashed" />
               </>
             )}
