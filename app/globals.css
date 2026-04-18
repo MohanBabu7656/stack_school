@@ -2,6 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================
+   GeeksforGeeks Inspired Design System
+   ========================================= */
+:root {
+  --gfg-green: #2f8d46;
+  --gfg-green-hover: #236b34;
+  --gfg-bg-light: #f8f9fa;
+  --gfg-border: #e0e0e0;
+  --gfg-text-main: #242424;
+  --gfg-code-bg: #1e1e1e;
+  --gfg-code-header: #2d2d2d;
+  --gfg-code-text: #d4d4d4;
+}
+
+.gfg-article {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--gfg-text-main);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.gfg-code-block {
+  background-color: var(--gfg-code-bg);
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.gfg-code-header {
+  background-color: var(--gfg-code-header);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
+
+.gfg-code-lang {
+  color: var(--gfg-code-text);
+  font-family: "Fira Code", Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gfg-copy-btn {
+  background: transparent;
+  border: 1px solid #666;
+  color: var(--gfg-code-text);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.gfg-copy-btn:hover {
+  background-color: #444;
+  color: #ffffff;
+  border-color: #888;
+}
+
+.gfg-pre {
+  margin: 0;
+  padding: 1.2rem;
+  overflow-x: auto;
+  color: var(--gfg-code-text);
+  font-family: "Fira Code", Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.95rem;
+}
+
+.gfg-inline-code {
+  background-color: var(--gfg-bg-light);
+  color: var(--gfg-green);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  border: 1px solid var(--gfg-border);
+}
+
 html {
   scroll-behavior: smooth;
   /* Standard Firefox scrollbar styling (Thumb Track) */

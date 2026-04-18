@@ -75,6 +75,45 @@ export default async function Dashboard() {
             <p className="text-slate-600 font-medium text-sm">Module {i + 1} • 12 Assignments</p>
           </div>))}
       </div>
+
+      {/* GeeksforGeeks Inspired Lesson Preview */}
+      <div className="mt-16 bg-white rounded-3xl p-8 md:p-12 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] border border-slate-200 relative z-10">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 border-b border-slate-200 pb-6 gap-4">
+          <h3 className="text-3xl font-extrabold text-slate-900">Lesson: Introduction to Django ORM</h3>
+          <span className="px-4 py-1.5 bg-[#e8f5e9] text-[#2f8d46] font-bold rounded-full text-sm border border-[#2f8d46]/20 self-start md:self-auto whitespace-nowrap">Reading Material</span>
+        </div>
+        
+        <div className="gfg-article">
+          <p>
+            The Django Object-Relational Mapper (ORM) is one of the most powerful features of Django. It enables you to interact with your database, like you would with SQL. In other words, it's a way to create, retrieve, update and delete records in your database using standard Python code.
+          </p>
+          <p>
+            To define a model, you inherit from <code className="gfg-inline-code">django.db.models.Model</code>. Each attribute of the model represents a database field.
+          </p>
+
+          <div className="gfg-code-block">
+            <div className="gfg-code-header">
+              <span className="gfg-code-lang">Python</span>
+              <button className="gfg-copy-btn">Copy</button>
+            </div>
+            <pre className="gfg-pre">
+{`from django.db import models
+
+class BootcampStudent(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    enrollment_date = models.DateField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"`}
+            </pre>
+          </div>
+          
+          <p>
+            Once you have defined your models, you need to tell Django to create the corresponding database tables. You do this by running the <code className="gfg-inline-code">makemigrations</code> and <code className="gfg-inline-code">migrate</code> commands in your terminal.
+          </p>
+        </div>
+      </div>
     </main>
   );
 }
