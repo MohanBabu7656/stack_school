@@ -32,17 +32,17 @@ export default function Landing() {
           </h2>
           <p className="text-xl md:text-2xl text-emerald-600 font-bold mb-8 tracking-widest uppercase drop-shadow-sm">Learn. Code. Succeed.</p>
           <p className="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-            Master modern web development, build real-world projects, and accelerate your career with our industry-leading coding bootcamps.
+            Master modern web development and build real-world projects. Choose us, and we will mold your raw potential into a polished, highly sought-after engineering profile perfectly suited for top tech companies.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center relative z-10">
             <Link href="/courses" className="inline-flex items-center justify-center px-8 py-3.5 bg-blue-950 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:-translate-y-1 transition-all duration-300">View Courses</Link>
             <Link href="/about" className="inline-flex items-center justify-center px-8 py-3.5 bg-white/70 backdrop-blur-md text-orange-600 border border-orange-200 font-semibold rounded-xl hover:bg-white hover:-translate-y-1 transition-all duration-300">About Us</Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-white/40 relative z-10">
-            <div><h4 className="text-3xl md:text-4xl font-black text-blue-950">92%</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Students Placed</p></div>
-            <div><h4 className="text-3xl md:text-4xl font-black text-emerald-600">+$35k</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Avg. Salary Increase</p></div>
-            <div><h4 className="text-3xl md:text-4xl font-black text-orange-500">50+</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Hiring Partners</p></div>
-            <div><h4 className="text-3xl md:text-4xl font-black text-blue-950">1M+</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Lines of Code</p></div>
+            <div><h4 className="text-3xl md:text-4xl font-black text-blue-950">0</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Alumni Placed Yet</p></div>
+            <div><h4 className="text-3xl md:text-4xl font-black text-emerald-600">Lifetime</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Career Support</p></div>
+            <div><h4 className="text-3xl md:text-4xl font-black text-orange-500">100%</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Transparency</p></div>
+            <div><h4 className="text-3xl md:text-4xl font-black text-blue-950">1-on-1</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Elite Mentorship</p></div>
           </div>
         </div>
       </main>
