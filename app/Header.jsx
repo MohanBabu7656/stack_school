@@ -49,9 +49,9 @@ export default function Header() {
           {!isDashboard ? 'Go to Dashboard' : 'Back to Home'}
         </Link>
         {!isDashboard && (
-          <Link href="/#roadmap" className="inline-flex items-center justify-center px-6 py-2.5 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScfXsTiBHpAZOvnfDsRAT1_qLQCV3jQReDL5N8xHMlEwvyQsw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300">
             Enroll Now
-          </Link>
+          </a>
         )}
       </div>
 
@@ -78,7 +78,7 @@ export default function Header() {
               </>
             )}
             <Link href={!isDashboard ? "/dashboard" : "/"} onClick={() => setIsMobileMenuOpen(false)} className="block text-left hover:text-orange-500 transition-colors font-bold">{!isDashboard ? 'Go to Dashboard' : 'Back to Home'}</Link>
-            {!isDashboard && <Link href="/#roadmap" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center px-5 py-3 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 transition-colors">Enroll Now</Link>}
+            {!isDashboard && <a href="https://docs.google.com/forms/d/e/1FAIpQLScfXsTiBHpAZOvnfDsRAT1_qLQCV3jQReDL5N8xHMlEwvyQsw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="w-full flex items-center justify-center px-5 py-3 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 transition-colors">Enroll Now</a>}
           </nav>
         </div>
       )}
