@@ -1,6 +1,7 @@
 import './globals.css'
 import Header from './Header';
 import Footer from './Footer';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'Stack School | Launch Your Tech Career',
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   )

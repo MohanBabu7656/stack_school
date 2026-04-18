@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import TrackedEnrollButton from '../../components/TrackedEnrollButton';
 
 export const metadata = {
   title: 'Python Fullstack Course | Stack School',
@@ -31,7 +32,13 @@ export default function PythonCoursePage() {
         </div>
 
         <div className="flex space-x-4">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScfXsTiBHpAZOvnfDsRAT1_qLQCV3jQReDL5N8xHMlEwvyQsw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 hover:-translate-y-1 transition-all duration-300">Enroll in Python Track</a>
+          <TrackedEnrollButton 
+            courseName="Python" 
+            href="https://docs.google.com/forms/d/e/1FAIpQLScfXsTiBHpAZOvnfDsRAT1_qLQCV3jQReDL5N8xHMlEwvyQsw/viewform?usp=dialog" 
+            className="px-8 py-4 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 hover:-translate-y-1 transition-all duration-300"
+          >
+            Enroll in Python Track
+          </TrackedEnrollButton>
           <Link href="/courses" className="px-8 py-4 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl shadow-sm hover:bg-slate-50 transition-colors">Back to Courses</Link>
         </div>
       </div>
