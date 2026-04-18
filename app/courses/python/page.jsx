@@ -34,7 +34,7 @@ export default function PythonCoursePage() {
         <div className="flex space-x-4">
           <TrackedEnrollButton 
             courseName="Python" 
-            href="https://docs.google.com/forms/d/e/1FAIpQLScfXsTiBHpAZOvnfDsRAT1_qLQCV3jQReDL5N8xHMlEwvyQsw/viewform?usp=dialog" 
+            href={process.env.NEXT_PUBLIC_ENROLLMENT_FORM_URL || "#"} 
             className="px-8 py-4 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 hover:-translate-y-1 transition-all duration-300"
           >
             Enroll in Python Track

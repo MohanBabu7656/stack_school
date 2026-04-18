@@ -76,6 +76,20 @@ export default async function Dashboard() {
           </div>))}
       </div>
 
+      {/* Career Tools Section */}
+      <h3 className="text-2xl font-bold text-blue-950 mt-16 mb-6 drop-shadow-sm">Career Prep Tools</h3>
+      <div className="bg-gradient-to-br from-indigo-900 to-blue-950 rounded-3xl p-8 md:p-10 shadow-xl border border-blue-800 flex flex-col md:flex-row items-center justify-between hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+        <div className="absolute top-[-50%] left-[-10%] w-64 h-64 bg-emerald-500/20 blur-3xl rounded-full pointer-events-none"></div>
+        <div className="mb-6 md:mb-0 relative z-10 md:mr-8">
+          <div className="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-lg text-xs font-black uppercase tracking-wider mb-4">New Feature</div>
+          <h4 className="text-3xl font-bold text-white mb-3">AI Resume Scorer</h4>
+          <p className="text-blue-200 font-medium max-w-xl leading-relaxed">Optimize your resume for Applicant Tracking Systems (ATS). Get instant, actionable AI feedback to ensure your profile stands out to top tech recruiters.</p>
+        </div>
+        <a href="https://mohan-babu-asanapuram.vercel.app/" target="_blank" rel="noopener noreferrer" className="shrink-0 w-full md:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white text-lg font-bold rounded-xl shadow-lg shadow-emerald-600/40 hover:-translate-y-0.5 transition-all duration-300 relative z-10 text-center whitespace-nowrap">
+          Scan My Resume
+        </a>
+      </div>
+
       {/* GeeksforGeeks Inspired Lesson Preview */}
       <div className="mt-16 bg-white rounded-3xl p-8 md:p-12 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] border border-slate-200 relative z-10">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 border-b border-slate-200 pb-6 gap-4">
