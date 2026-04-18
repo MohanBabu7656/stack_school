@@ -33,9 +33,10 @@ export default function Header() {
       <nav className="hidden md:flex items-center space-x-8 font-medium text-blue-950">
         {!isDashboard ? (
           <>
+            <Link href="/" className={`transition-colors ${pathname === '/' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Home</Link>
             <Link href="/courses" className={`transition-colors ${pathname.startsWith('/courses') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Courses</Link>
+            <Link href="/placements" className={`transition-colors ${pathname.startsWith('/placements') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Placements</Link>
             <Link href="/about" className={`transition-colors ${pathname === '/about' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>About Us</Link>
-            <Link href="/#mentors" className={`transition-colors hover:text-orange-500`}>Mentors</Link>
           </>
         ) : (
           <span className="text-orange-500 font-bold tracking-wide">Student Dashboard</span>
@@ -78,9 +79,10 @@ export default function Header() {
           <nav className="flex flex-col space-y-4 font-medium text-blue-950">
             {!isDashboard && (
               <>
+                <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname === '/' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Home</Link>
                 <Link href="/courses" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname.startsWith('/courses') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Courses</Link>
+                <Link href="/placements" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname.startsWith('/placements') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Placements</Link>
                 <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname === '/about' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>About Us</Link>
-                <Link href="/#mentors" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors hover:text-orange-500`}>Mentors</Link>
                 <hr className="border-slate-200 border-dashed" />
               </>
             )}

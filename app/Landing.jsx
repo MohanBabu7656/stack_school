@@ -66,22 +66,6 @@ export default function Landing() {
         </motion.div>
       </section>
 
-      <section id="mentors" className="px-4 py-16 flex justify-center relative z-10 bg-white/20 backdrop-blur-md border-y border-white/40">
-        <div className="max-w-5xl w-full">
-          <h3 className="text-4xl font-extrabold text-center text-blue-950 mb-12 drop-shadow-sm">Meet Your Mentors</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 bg-white/60 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-24 h-24 rounded-full bg-blue-200 shrink-0 overflow-hidden border-4 border-white shadow-sm flex items-center justify-center"><svg className="w-12 h-12 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg></div>
-              <div className="text-center sm:text-left"><h4 className="text-2xl font-bold text-blue-950">Sarah Jenkins</h4><p className="text-orange-600 font-bold text-sm mb-3">Former Senior Java Developer at Amazon</p><p className="text-slate-700 font-medium text-sm leading-relaxed">Brings 10+ years of enterprise architecture experience to help you master Spring Boot and cloud-native backend systems.</p></div>
-            </div>
-            <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 bg-white/60 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300">
-              <div className="w-24 h-24 rounded-full bg-emerald-200 shrink-0 overflow-hidden border-4 border-white shadow-sm flex items-center justify-center"><svg className="w-12 h-12 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg></div>
-              <div className="text-center sm:text-left"><h4 className="text-2xl font-bold text-blue-950">David Chen</h4><p className="text-emerald-600 font-bold text-sm mb-3">Lead Python Engineer at Stripe</p><p className="text-slate-700 font-medium text-sm leading-relaxed">Expert in data-driven backends and scalable integrations using Django, FastAPI, and robust AWS infrastructure.</p></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="roadmap" className="px-4 py-20 flex justify-center relative z-10">
         <div className="max-w-4xl w-full text-center bg-blue-950 rounded-3xl p-10 md:p-16 shadow-2xl shadow-blue-900/40 relative overflow-hidden border border-blue-800">
           <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 blur-3xl rounded-full pointer-events-none"></div>
