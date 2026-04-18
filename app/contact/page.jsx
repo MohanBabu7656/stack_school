@@ -24,7 +24,7 @@ export default function ContactPage() {
     const text = `*New Inquiry from Stack School Website*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Course Interested:* ${course}\n*Message:* ${message}`;
     
     // Open WhatsApp in a new tab routing to the specific number (assuming country code +91 for India)
-    const whatsappUrl = `<https://wa.me/916281865015?text=${encodeURIComponent(text)}>`;
+    const whatsappUrl = `https://wa.me/916281865015?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
   };
 
