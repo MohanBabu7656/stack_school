@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import TrackedEnrollButton from '../../components/TrackedEnrollButton';
+import TrackedEnrollButton from '../../TrackedEnrollButton';
 
 export const metadata = {
   title: 'Python Fullstack Course | Stack School',
