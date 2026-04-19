@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "@vercel/analytics": "^2.0.1",
     "framer-motion": "^12.38.0",
+    "motion": "^12.38.0",
     "next": "latest",
     "react": "^18",
     "react-dom": "^18",

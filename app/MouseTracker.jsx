@@ -28,12 +28,13 @@ export default function MouseTracker() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-[400px] h-[400px] bg-orange-500/15 rounded-full blur-[100px] pointer-events-none z-0"
+      className="fixed top-0 left-0 w-[500px] h-[500px] pointer-events-none z-0"
       style={{
         x: smoothX,
         y: smoothY,
         translateX: '-50%',
         translateY: '-50%',
+        background: 'radial-gradient(circle, rgba(249,115,22,0.12) 0%, rgba(249,115,22,0.05) 40%, rgba(0,0,0,0) 70%)',
       }}
     />
   );

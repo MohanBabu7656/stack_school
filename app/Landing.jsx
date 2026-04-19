@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import Link from 'next/link';
 import { captureLead } from './actions';
 
@@ -24,10 +24,34 @@ function SubmitButton() {
 export default function Landing() {
   const [formState, formAction] = useFormState(captureLead, { success: false, message: '' });
 
+  // Setup 3D Tilt Physics for the Hero Card
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  const springX = useSpring(mouseX, { damping: 30, stiffness: 300 });
+  const springY = useSpring(mouseY, { damping: 30, stiffness: 300 });
+  
+  // Transform mouse position to a rotation angle (max 8 degrees)
+  const rotateX = useTransform(springY, [-300, 300], [8, -8]);
+  const rotateY = useTransform(springX, [-300, 300], [-8, 8]);
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    mouseX.set(e.clientX - centerX);
+    mouseY.set(e.clientY - centerY);
+  };
+
   return (
     <>
-      <main className="flex-grow flex flex-col items-center justify-center text-center px-4 py-20 md:py-32">
-        <div className="max-w-4xl w-full bg-white/40 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-3xl p-10 md:p-16 relative overflow-hidden">
+      <main className="flex-grow flex flex-col items-center justify-center text-center px-4 py-20 md:py-32 perspective-1000">
+        <motion.div 
+          onMouseMove={handleMouseMove}
+          onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
+          style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+          className="max-w-4xl w-full bg-white/40 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-3xl p-10 md:p-16 relative overflow-hidden"
+        >
           <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/40 to-transparent pointer-events-none"></div>
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
@@ -75,7 +99,7 @@ export default function Landing() {
               <div className="w-[45vw] md:w-auto shrink-0 snap-center"><h4 className="text-3xl md:text-4xl font-black text-blue-950">1-on-1</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Elite Mentorship</p></div>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </main>
 
       <section className="py-8 bg-white/20 backdrop-blur-sm border-y border-white/40 overflow-hidden flex relative z-10">
