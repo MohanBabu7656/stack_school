@@ -30,7 +30,12 @@ export default function CoursesPage() {
               <li className="flex items-start min-w-0"><span className="mr-3 text-emerald-500 font-bold shrink-0">✓</span><span className="break-words min-w-0">MySQL Database & CRUD</span></li>
               <li className="flex items-start min-w-0"><span className="mr-3 text-emerald-500 font-bold shrink-0">✓</span><span className="break-words min-w-0">Streamlit UI Dashboards</span></li>
             </ul>
-            <Link href="/courses/python" className="block text-center min-h-[44px] min-w-[44px] w-full sm:w-auto py-3.5 bg-white/80 border-2 border-blue-950 text-blue-950 font-bold rounded-xl hover:bg-blue-950 hover:text-white transition-colors duration-300 shadow-sm mt-auto text-sm md:text-base">Explore Fast-Track</Link>
+            <div className="flex gap-3 mt-auto">
+              <Link href="/courses/python" className="flex-1 flex items-center justify-center min-h-[44px] min-w-[44px] py-3.5 bg-white/80 border-2 border-blue-950 text-blue-950 font-bold rounded-xl hover:bg-blue-950 hover:text-white transition-colors duration-300 shadow-sm text-sm md:text-base">Explore Fast-Track</Link>
+              <a href="/pdfs/Python%20Fast-Track.pdf" download target="_blank" rel="noopener noreferrer" className="flex items-center justify-center min-h-[44px] min-w-[44px] px-4 py-3.5 bg-emerald-50 border border-emerald-200 text-emerald-700 hover:bg-emerald-100 font-bold rounded-xl transition-colors duration-300 shadow-sm" title="Download Syllabus">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+              </a>
+            </div>
           </div>
 
           <div className="w-full min-w-0 bg-white/60 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-6 md:p-8 hover:shadow-orange-500/20 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden flex flex-col h-full">

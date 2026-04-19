@@ -8,6 +8,7 @@ import { track } from '@vercel/analytics';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCoursesExpanded, setIsCoursesExpanded] = useState(false);
   const pathname = usePathname();
   const isCareerTools = pathname.startsWith('/career-tools');
 
@@ -81,7 +82,22 @@ export default function Header() {
             {!isCareerTools && (
               <>
                 <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname === '/' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Home</Link>
-                <Link href="/courses" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname.startsWith('/courses') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Courses</Link>
+                
+                <div className="flex flex-col">
+                  <div className="flex items-center justify-between">
+                    <Link href="/courses" onClick={() => setIsMobileMenuOpen(false)} className={`transition-colors ${pathname === '/courses' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Courses</Link>
+                    <button onClick={() => setIsCoursesExpanded(!isCoursesExpanded)} className="p-1 text-slate-400 hover:text-orange-500 focus:outline-none">
+                      <svg className={`w-5 h-5 transition-transform duration-300 ${isCoursesExpanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                  </div>
+                  {isCoursesExpanded && (
+                    <div className="flex flex-col pl-4 mt-3 space-y-3 border-l-2 border-orange-100 animate-[fadeIn_0.3s_ease-in-out]">
+                      <Link href="/courses/python" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors text-sm ${pathname === '/courses/python' ? 'text-emerald-500 font-bold' : 'text-slate-600 hover:text-emerald-500'}`}>🐍 Python Fast-Track</Link>
+                      <Link href="/courses/java" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors text-sm ${pathname === '/courses/java' ? 'text-orange-500 font-bold' : 'text-slate-600 hover:text-orange-500'}`}>☕ Java Fullstack</Link>
+                    </div>
+                  )}
+                </div>
+
                 <Link href="/placements" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname.startsWith('/placements') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Placements</Link>
                 <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname === '/about' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>About Us</Link>
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname === '/contact' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Contact</Link>

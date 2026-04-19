@@ -13,7 +13,20 @@ export default function ContactPage() {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    
+    if (name === 'course') {
+      const defaultMessages = {
+        'Python Fast-Track': 'Hi Stack School Team! I am interested in the Python Fast-Track program and would love to get more details about the curriculum, upcoming cohorts, and the enrollment process.',
+        'Java Fullstack': 'Hi Stack School Team! I am interested in the Java Fullstack program and would love to get more details about the curriculum, upcoming cohorts, and the enrollment process.',
+        'Undecided / Other': 'Hi Stack School Team! I am interested in your programs and would love to get more details about the curriculum, upcoming cohorts, and the enrollment process.'
+      };
+      
+      // Update both the course and the message dynamically
+      setFormData({ ...formData, course: value, message: defaultMessages[value] || defaultMessages['Undecided / Other'] });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const handleSubmit = (e) => {

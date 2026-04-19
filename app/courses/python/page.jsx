@@ -33,7 +33,17 @@ export default function PythonCoursePage() {
           >
             Enroll in Fast-Track
           </TrackedEnrollButton>
-          <Link href="/courses" className="min-h-[44px] min-w-[44px] w-full sm:w-auto px-8 py-4 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl shadow-sm hover:bg-slate-50 transition-colors text-center text-sm md:text-base">Back to Courses</Link>
+          <a 
+            href="/pdfs/Python%20Fast-Track.pdf" 
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-h-[44px] min-w-[44px] w-full sm:w-auto px-8 py-4 bg-white text-emerald-700 border-2 border-emerald-200 font-bold rounded-xl shadow-sm hover:bg-emerald-50 hover:-translate-y-1 transition-all duration-300 text-center text-sm md:text-base flex items-center justify-center gap-2"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            Download Syllabus
+          </a>
+          <Link href="/courses" className="min-h-[44px] min-w-[44px] w-full sm:w-auto px-8 py-4 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl shadow-sm hover:bg-slate-50 transition-colors text-center flex items-center justify-center text-sm md:text-base">Back to Courses</Link>
         </div>
       </div>
     </main>
