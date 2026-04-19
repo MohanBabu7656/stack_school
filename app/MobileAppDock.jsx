@@ -1,13 +1,26 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Dock from './Dock';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 
 export default function MobileAppDock() {
   const router = useRouter();
   const pathname = usePathname();
+  const [isHidden, setIsHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    // Hide the dock if scrolling down and past the 150px threshold
+    if (latest > previous && latest > 150) {
+      setIsHidden(true);
+    // Show the dock immediately when scrolling up
+    } else if (latest < previous) {
+      setIsHidden(false);
+    }
+  });
 
   const items = [
     { 
@@ -44,10 +57,12 @@ export default function MobileAppDock() {
 
   return (
     <motion.div 
-      initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: 'spring', damping: 25, stiffness: 200, delay: 0.5 }}
-      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] w-fit max-w-[95vw] md:hidden"
+      initial={{ y: 100, opacity: 0 }} 
+      animate={{ y: isHidden ? 150 : 0, opacity: isHidden ? 0 : 1 }} 
+      transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+      className="fixed bottom-6 inset-x-0 z-[100] flex justify-center px-3 md:hidden pointer-events-none"
     >
-      <Dock items={items} panelHeight={60} baseItemSize={44} magnification={60} />
+      <Dock items={items} panelHeight={58} baseItemSize={42} magnification={56} />
     </motion.div>
   );
 }

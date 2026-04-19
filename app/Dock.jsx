@@ -43,7 +43,7 @@ export default function Dock({ items, panelHeight = 68, baseItemSize = 50, magni
 
   return (
     <motion.div
-      className="mx-auto flex items-end justify-center gap-1.5 sm:gap-2 bg-white/60 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] rounded-3xl px-2 py-2"
+      className="mx-auto flex items-end justify-center gap-1.5 sm:gap-2 bg-white/60 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] rounded-3xl px-2 py-2 max-w-full overflow-x-auto hide-scrollbar pointer-events-auto"
       style={{ height: panelHeight }}
       onMouseMove={(e) => mouseX.set(e.clientX)}
       onMouseLeave={() => mouseX.set(Infinity)}
