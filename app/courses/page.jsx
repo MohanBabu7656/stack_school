@@ -17,14 +17,20 @@ export default function CoursesPage() {
           
           <div className="bg-white/60 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-8 hover:shadow-emerald-500/20 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden flex flex-col h-full">
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/40 to-transparent -z-10 pointer-events-none"></div>
-            <div className="flex justify-between items-start mb-4"><h4 className="text-3xl font-bold text-blue-950">Python Fullstack</h4><span className="text-emerald-600 font-mono font-bold bg-emerald-100/80 px-3 py-1 rounded-lg">{'< py >'}</span></div>
-            <p className="text-orange-600 font-bold mb-5 text-lg">Data-Driven Web Applications</p>
+            <div className="flex justify-between items-start mb-4">
+              <div className="flex items-center gap-3">
+                <h4 className="text-3xl font-bold text-blue-950">Python Fast-Track</h4>
+                <span className="px-2.5 py-0.5 text-[10px] font-black uppercase tracking-widest text-white bg-gradient-to-r from-orange-500 to-red-500 rounded-full shadow-sm animate-pulse">New!</span>
+              </div>
+              <span className="text-emerald-600 font-mono font-bold bg-emerald-100/80 px-3 py-1 rounded-lg">{'< py >'}</span>
+            </div>
+            <p className="text-emerald-600 font-bold mb-5 text-lg">8-Week Data & Web Bootcamp</p>
             <ul className="text-slate-700 font-medium space-y-3 mb-8 flex-grow">
-              <li className="flex items-center"><span className="mr-3 text-emerald-500 font-bold">✓</span> Django & FastAPI</li>
-              <li className="flex items-center"><span className="mr-3 text-emerald-500 font-bold">✓</span> React & Modern Frontend</li>
-              <li className="flex items-center"><span className="mr-3 text-emerald-500 font-bold">✓</span> Cloud Deployment & CI/CD</li>
+              <li className="flex items-center"><span className="mr-3 text-emerald-500 font-bold">✓</span> Core Python & Data Structures</li>
+              <li className="flex items-center"><span className="mr-3 text-emerald-500 font-bold">✓</span> MySQL Database & CRUD</li>
+              <li className="flex items-center"><span className="mr-3 text-emerald-500 font-bold">✓</span> Streamlit UI Dashboards</li>
             </ul>
-            <Link href="/courses/python" className="block text-center w-full py-3.5 bg-white/80 border-2 border-blue-950 text-blue-950 font-bold rounded-xl hover:bg-blue-950 hover:text-white transition-colors duration-300 shadow-sm mt-auto">Explore Python Stack</Link>
+            <Link href="/courses/python" className="block text-center w-full py-3.5 bg-white/80 border-2 border-blue-950 text-blue-950 font-bold rounded-xl hover:bg-blue-950 hover:text-white transition-colors duration-300 shadow-sm mt-auto">Explore Fast-Track</Link>
           </div>
 
           <div className="bg-white/60 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-8 hover:shadow-orange-500/20 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden flex flex-col h-full">
