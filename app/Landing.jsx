@@ -56,17 +56,17 @@ export default function Landing() {
           <motion.div 
             animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-orange-500/20 rounded-full blur-[100px] md:blur-[120px]"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-[#f97316]/20 rounded-full blur-[100px] md:blur-[120px]"
           />
           <motion.div 
             animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-emerald-500/20 rounded-full blur-[80px] md:blur-[100px]"
+            className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#10b981]/20 rounded-full blur-[80px] md:blur-[100px]"
           />
           <motion.div 
             animate={{ scale: [1, 1.25, 1], opacity: [0.15, 0.35, 0.15] }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-            className="absolute top-1/3 right-1/4 translate-x-1/4 w-[350px] md:w-[550px] h-[350px] md:h-[550px] bg-blue-500/30 rounded-full blur-[90px] md:blur-[110px]"
+            className="absolute top-1/3 right-1/4 translate-x-1/4 w-[350px] md:w-[550px] h-[350px] md:h-[550px] bg-[#3b82f6]/30 rounded-full blur-[90px] md:blur-[110px]"
           />
         </div>
         <motion.div 
