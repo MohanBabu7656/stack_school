@@ -47,9 +47,6 @@ export default function Dock({ items, panelHeight = 68, baseItemSize = 50, magni
       style={{ height: panelHeight }}
       onMouseMove={(e) => mouseX.set(e.clientX)}
       onMouseLeave={() => mouseX.set(Infinity)}
-      onTouchMove={(e) => mouseX.set(e.touches[0].clientX)}
-      onTouchEnd={() => mouseX.set(Infinity)}
-      onTouchCancel={() => mouseX.set(Infinity)}
     >
       {items.map((item, idx) => (
         <DockItem key={idx} item={item} mouseX={mouseX} baseItemSize={baseItemSize} magnification={magnification} />
