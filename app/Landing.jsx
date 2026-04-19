@@ -9,13 +9,15 @@ import { captureLead } from './actions';
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <button 
+    <motion.button 
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.97 }}
       type="submit" 
       disabled={pending}
       className="px-8 py-4 bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-orange-500/40 hover:bg-orange-400 hover:-translate-y-1 transition-all duration-300 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
     >
       {pending ? 'Sending...' : 'Get My Roadmap'}
-    </button>
+    </motion.button>
   );
 }
 
@@ -51,8 +53,12 @@ export default function Landing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.3, ease: "easeOut" }}
             className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center relative z-10">
-            <Link href="/courses" className="inline-flex items-center justify-center px-8 py-3.5 bg-blue-950 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:-translate-y-1 transition-all duration-300">View Courses</Link>
-            <Link href="/about" className="inline-flex items-center justify-center px-8 py-3.5 bg-white/70 backdrop-blur-md text-orange-600 border border-orange-200 font-semibold rounded-xl hover:bg-white hover:-translate-y-1 transition-all duration-300">About Us</Link>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link href="/courses" className="inline-flex items-center justify-center w-full px-8 py-3.5 bg-blue-950 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-blue-900 transition-all duration-300">View Courses</Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link href="/about" className="inline-flex items-center justify-center w-full px-8 py-3.5 bg-white/70 backdrop-blur-md text-orange-600 border border-orange-200 font-semibold rounded-xl hover:bg-white transition-all duration-300">About Us</Link>
+            </motion.div>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0 }}

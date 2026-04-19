@@ -2,6 +2,8 @@ import './globals.css'
 import Header from './Header';
 import Footer from './Footer';
 import { Analytics } from '@vercel/analytics/react';
+import MouseTracker from './MouseTracker';
+import FloatingParticles from './FloatingParticles';
 
 export const metadata = {
   title: 'Stack School | Launch Your Tech Career',
@@ -13,6 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="min-h-screen bg-slate-50 font-sans flex flex-col relative overflow-x-hidden selection:bg-orange-500 selection:text-white">
         
+        {/* Interactive Background Effects */}
+        <MouseTracker />
+        <FloatingParticles />
+
         {/* Background Gradients & Textures for Glassmorphism Context */}
         <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
           <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-emerald-200 rounded-full mix-blend-multiply filter blur-[120px] opacity-60 animate-pulse"></div>
