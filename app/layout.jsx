@@ -4,6 +4,7 @@ import Footer from './Footer';
 import { Analytics } from '@vercel/analytics/react';
 import MouseTracker from './MouseTracker';
 import FloatingParticles from './FloatingParticles';
+import MobileAppDock from './MobileAppDock';
 
 export const metadata = {
   title: 'Stack School | Launch Your Tech Career',
@@ -33,8 +34,11 @@ export default function RootLayout({ children }) {
 
         <div className="relative z-10 flex flex-col min-h-screen">
           <Header />
-          {children}
+          <div className="flex-grow pb-24 md:pb-0 flex flex-col">
+            {children}
+          </div>
           <Footer />
+          <MobileAppDock />
         </div>
         <Analytics />
       </body>
