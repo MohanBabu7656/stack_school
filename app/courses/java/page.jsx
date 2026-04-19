@@ -34,13 +34,16 @@ export default function JavaCoursePage() {
         <div className="flex space-x-4">
           <TrackedEnrollButton 
             courseName="Java" 
-            href={process.env.NEXT_PUBLIC_ENROLLMENT_FORM_URL || "#"} 
+            href="/apply" 
             className="px-8 py-4 bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-orange-400 hover:-translate-y-1 transition-all duration-300"
           >
-            Enroll in Java Track
+            Apply Now
           </TrackedEnrollButton>
           <Link href="/courses" className="px-8 py-4 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl shadow-sm hover:bg-slate-50 transition-colors">Back to Courses</Link>
         </div>
+        <p className="mt-8 text-sm text-slate-500 font-medium">
+          Just looking for interview practice? <Link href="/apply" className="text-orange-500 hover:underline">Check out our Free Mock Interview Program.</Link>
+        </p>
       </div>
     </main>
   );

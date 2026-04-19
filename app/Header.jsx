@@ -53,15 +53,13 @@ export default function Header() {
           {!isCareerTools ? 'Career Tools' : 'Back to Home'}
         </Link>
         {!isCareerTools && (
-          <a 
-            href={process.env.NEXT_PUBLIC_ENROLLMENT_FORM_URL || "#"} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <Link 
+            href="/apply" 
             className="inline-flex items-center justify-center px-6 py-2.5 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300"
-            onClick={() => track('Enrollment Clicked', { location: 'Desktop Header' })}
+            onClick={() => track('Apply Hub Clicked', { location: 'Desktop Header' })}
           >
-            Enroll Now
-          </a>
+            Apply Now
+          </Link>
         )}
       </div>
 
@@ -105,13 +103,11 @@ export default function Header() {
               </>
             )}
             <Link href={!isCareerTools ? "/career-tools" : "/"} onClick={() => setIsMobileMenuOpen(false)} className="block text-left hover:text-orange-500 transition-colors font-bold">{!isCareerTools ? 'Career Tools' : 'Back to Home'}</Link>
-            {!isCareerTools && <a 
-              href={process.env.NEXT_PUBLIC_ENROLLMENT_FORM_URL || "#"} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              onClick={() => { setIsMobileMenuOpen(false); track('Enrollment Clicked', { location: 'Mobile Menu' }); }} 
+            {!isCareerTools && <Link 
+              href="/apply" 
+              onClick={() => { setIsMobileMenuOpen(false); track('Apply Hub Clicked', { location: 'Mobile Menu' }); }} 
               className="w-full flex items-center justify-center px-5 py-3 bg-blue-950 text-white font-semibold rounded-lg shadow-lg shadow-orange-500/30 hover:bg-blue-900 transition-colors"
-            >Enroll Now</a>}
+            >Apply Now</Link>}
           </nav>
         </div>
       )}
