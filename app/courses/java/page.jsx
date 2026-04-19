@@ -42,7 +42,7 @@ export default function JavaCoursePage() {
           <Link href="/courses" className="px-8 py-4 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl shadow-sm hover:bg-slate-50 transition-colors">Back to Courses</Link>
         </div>
         <p className="mt-8 text-sm text-slate-500 font-medium">
-          Just looking for interview practice? <Link href="/apply" className="text-orange-500 hover:underline">Check out our Free Mock Interview Program.</Link>
+          Just looking for interview practice? <Link href="/mock-interviews" className="text-orange-500 hover:underline">Check out our Free Mock Interview Program.</Link>
         </p>
       </div>
     </main>
