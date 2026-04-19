@@ -5,6 +5,10 @@ import { Analytics } from '@vercel/analytics/react';
 import MouseTracker from './MouseTracker';
 import FloatingParticles from './FloatingParticles';
 import MobileAppDock from './MobileAppDock';
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata = {
   title: 'Stack School | Launch Your Tech Career',
@@ -13,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className="min-h-screen bg-slate-50 font-sans flex flex-col relative overflow-x-hidden selection:bg-orange-500 selection:text-white">
         
         {/* Interactive Background Effects */}

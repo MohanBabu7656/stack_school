@@ -5,6 +5,7 @@ import { useFormState, useFormStatus } from 'react-dom';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import Link from 'next/link';
 import { captureLead } from './actions';
+import DotField from './DotField';
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -45,7 +46,24 @@ export default function Landing() {
 
   return (
     <>
-      <main className="flex-grow flex flex-col items-center justify-center text-center px-4 py-20 md:py-32 perspective-1000">
+      <main className="flex-grow flex flex-col items-center justify-center text-center px-4 py-20 md:py-32 perspective-1000 relative">
+        {/* Interactive DotField Background */}
+        <div className="absolute inset-0 z-0 overflow-hidden opacity-50">
+          <DotField
+            dotRadius={1.5}
+            dotSpacing={14}
+            bulgeStrength={67}
+            glowRadius={160}
+            sparkle={false}
+            waveAmplitude={0}
+            cursorRadius={500}
+            cursorForce={0.1}
+            bulgeOnly
+            gradientFrom="#172554"
+            gradientTo="#f97316"
+            glowColor="#f8fafc"
+          />
+        </div>
         <motion.div 
           onMouseMove={handleMouseMove}
           onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
