@@ -43,10 +43,10 @@ export default function FloatingParticles() {
               enable: true,
               outModes: { default: "out" },
               random: true,
-              speed: 0.6, // Slow, realistic drift
+              speed: { min: 0.4, max: 1.2 }, // Varied, realistic drift
               straight: false,
             },
-            number: { density: { enable: true, area: 800 }, value: 15 },
+            number: { density: { enable: true, area: 800 }, value: 25 },
             opacity: {
               value: { min: 0.1, max: 0.5 },
               animation: { enable: true, speed: 0.5, minimumValue: 0.1 },
@@ -66,7 +66,18 @@ export default function FloatingParticles() {
                   { value: "()", font: "monospace", style: "", weight: "bold" },
                   { value: "=>", font: "monospace", style: "", weight: "bold" },
                   { value: "0101", font: "monospace", style: "", weight: "bold" },
-                  { value: "[]", font: "monospace", style: "", weight: "bold" }
+                  { value: "[]", font: "monospace", style: "", weight: "bold" },
+                  { value: "console.log()", font: "monospace", style: "", weight: "bold" },
+                  { value: "def run():", font: "monospace", style: "", weight: "bold" },
+                  { value: "<App />", font: "monospace", style: "", weight: "bold" },
+                  { value: "SELECT *", font: "monospace", style: "", weight: "bold" },
+                  { value: "npm start", font: "monospace", style: "", weight: "bold" },
+                  { value: "git commit", font: "monospace", style: "", weight: "bold" },
+                  { value: "&&", font: "monospace", style: "", weight: "bold" },
+                  { value: "||", font: "monospace", style: "", weight: "bold" },
+                  { value: "!==", font: "monospace", style: "", weight: "bold" },
+                  { value: "HashMap<>", font: "monospace", style: "", weight: "bold" },
+                  { value: "lambda x:", font: "monospace", style: "", weight: "bold" }
                 ]
               }
             },
