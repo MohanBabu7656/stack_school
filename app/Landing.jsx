@@ -45,7 +45,25 @@ export default function Landing() {
 
   return (
     <>
-      <main className="flex-grow flex flex-col items-center justify-center text-center px-4 py-20 md:py-32 perspective-1000">
+      <main className="flex-grow flex flex-col items-center justify-center text-center px-4 py-20 md:py-32 perspective-1000 relative">
+        {/* Animated Tech Grid & Glowing Orbs Background */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          <motion.div 
+            animate={{ backgroundPosition: ["0px 0px", "64px 64px"] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-0 bg-[linear-gradient(to_right,#1725540f_1px,transparent_1px),linear-gradient(to_bottom,#1725540f_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_40%,transparent_100%)]"
+          />
+          <motion.div 
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-orange-500/20 rounded-full blur-[100px] md:blur-[120px]"
+          />
+          <motion.div 
+            animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-emerald-500/20 rounded-full blur-[80px] md:blur-[100px]"
+          />
+        </div>
         <motion.div 
           onMouseMove={handleMouseMove}
           onMouseLeave={() => { mouseX.set(0); mouseY.set(0); }}
