@@ -9,31 +9,31 @@ export const metadata = {
 
 export default function PythonCoursePage() {
   return (
-    <main className="flex-grow px-4 py-20 md:py-32 flex justify-center relative z-10">
-      <div className="max-w-4xl w-full bg-white/60 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] rounded-3xl p-10 md:p-16 relative overflow-hidden">
+    <main className="flex-grow px-4 md:px-8 py-20 md:py-32 flex justify-center relative z-10">
+      <div className="max-w-4xl w-full bg-white/60 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] rounded-3xl p-6 md:p-10 lg:p-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none"></div>
         
         <div className="flex items-center mb-6">
           <span className="text-emerald-600 font-mono font-bold bg-emerald-100/80 px-3 py-1 rounded-lg mr-4">{'< py >'}</span>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950 drop-shadow-sm">Python Fast-Track</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-blue-950 drop-shadow-sm">Python Fast-Track</h1>
         </div>
         
-        <p className="text-xl text-slate-700 font-medium mb-10 leading-relaxed">
+        <p className="text-sm md:text-base lg:text-xl text-slate-700 font-medium mb-10 leading-relaxed">
           Go from zero to deploying interactive data web apps in 8 weeks—using purely Python. Master core programming logic, integrate persistent MySQL databases, and build beautiful frontend UIs using Streamlit without needing HTML or CSS.
         </p>
         
-        <h2 className="text-3xl font-bold text-blue-950 mb-6">Interactive Syllabus</h2>
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-blue-950 mb-6">Interactive Syllabus</h2>
         <SyllabusViewer />
 
-        <div className="flex space-x-4">
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <TrackedEnrollButton 
             courseName="Python Fast-Track" 
             href={process.env.NEXT_PUBLIC_ENROLLMENT_FORM_URL || "#"} 
-            className="px-8 py-4 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 hover:-translate-y-1 transition-all duration-300"
+            className="min-h-[44px] min-w-[44px] w-full sm:w-auto px-8 py-4 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 hover:-translate-y-1 transition-all duration-300 text-center text-sm md:text-base"
           >
             Enroll in Fast-Track
           </TrackedEnrollButton>
-          <Link href="/courses" className="px-8 py-4 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl shadow-sm hover:bg-slate-50 transition-colors">Back to Courses</Link>
+          <Link href="/courses" className="min-h-[44px] min-w-[44px] w-full sm:w-auto px-8 py-4 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl shadow-sm hover:bg-slate-50 transition-colors text-center text-sm md:text-base">Back to Courses</Link>
         </div>
       </div>
     </main>
