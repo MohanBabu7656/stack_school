@@ -46,7 +46,7 @@ export default function PythonCoursePage() {
           <Link href="/courses" className="min-h-[44px] min-w-[44px] w-full sm:w-auto px-8 py-4 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl shadow-sm hover:bg-slate-50 transition-colors text-center flex items-center justify-center text-sm md:text-base">Back to Courses</Link>
         </div>
         <p className="mt-8 text-sm text-slate-500 font-medium text-center sm:text-left">
-          Just looking for interview practice? <Link href="/mock-interviews" className="text-emerald-600 hover:underline">Check out our Free Mock Interview Program.</Link>
+          Just looking for interview practice? <Link href="/courses/mock-interviews" className="text-emerald-600 hover:underline">Check out our Free Mock Interview Program.</Link>
         </p>
       </div>
     </main>

@@ -92,6 +92,7 @@ export default function Header() {
                     <div className="flex flex-col pl-4 mt-3 space-y-3 border-l-2 border-orange-100 animate-[fadeIn_0.3s_ease-in-out]">
                       <Link href="/courses/python" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors text-sm ${pathname === '/courses/python' ? 'text-emerald-500 font-bold' : 'text-slate-600 hover:text-emerald-500'}`}>🐍 Python Fast-Track</Link>
                       <Link href="/courses/java" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors text-sm ${pathname === '/courses/java' ? 'text-orange-500 font-bold' : 'text-slate-600 hover:text-orange-500'}`}>☕ Java Fullstack</Link>
+                      <Link href="/courses/mock-interviews" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors text-sm ${pathname === '/courses/mock-interviews' ? 'text-blue-500 font-bold' : 'text-slate-600 hover:text-blue-500'}`}>🎯 Mock Interviews</Link>
                     </div>
                   )}
                 </div>
