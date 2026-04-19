@@ -1,26 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Dock from './Dock';
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function MobileAppDock() {
   const router = useRouter();
   const pathname = usePathname();
-  const [isHidden, setIsHidden] = useState(false);
-  const { scrollY } = useScroll();
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0;
-    // Hide the dock if scrolling down and past the 150px threshold
-    if (latest > previous && latest > 150) {
-      setIsHidden(true);
-    // Show the dock immediately when scrolling up
-    } else if (latest < previous) {
-      setIsHidden(false);
-    }
-  });
 
   const items = [
     { 
@@ -58,7 +45,7 @@ export default function MobileAppDock() {
   return (
     <motion.div 
       initial={{ y: 100, opacity: 0 }} 
-      animate={{ y: isHidden ? 150 : 0, opacity: isHidden ? 0 : 1 }} 
+      animate={{ y: 0, opacity: 1 }} 
       transition={{ type: 'spring', damping: 25, stiffness: 200 }}
       className="fixed bottom-6 inset-x-0 z-[100] flex justify-center px-3 md:hidden pointer-events-none"
     >
