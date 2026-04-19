@@ -10,12 +10,12 @@ export const metadata = {
 export default function PythonCoursePage() {
   return (
     <main className="flex-grow px-4 md:px-8 py-20 md:py-32 flex justify-center relative z-10">
-      <div className="max-w-4xl w-full bg-white/60 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] rounded-3xl p-6 md:p-10 lg:p-16 relative overflow-hidden">
+      <div className="max-w-4xl w-full min-w-0 bg-white/60 backdrop-blur-xl border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.05)] rounded-3xl p-6 md:p-10 lg:p-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none"></div>
         
-        <div className="flex items-center mb-6">
+        <div className="flex items-center mb-6 min-w-0">
           <span className="text-emerald-600 font-mono font-bold bg-emerald-100/80 px-3 py-1 rounded-lg mr-4">{'< py >'}</span>
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-blue-950 drop-shadow-sm">Python Fast-Track</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-blue-950 drop-shadow-sm break-words whitespace-normal min-w-0">Python Fast-Track</h1>
         </div>
         
         <p className="text-sm md:text-base lg:text-xl text-slate-700 font-medium mb-10 leading-relaxed">

@@ -59,12 +59,12 @@ export default function SyllabusViewer() {
   return (
     <div className="mb-12">
       {/* Interactive Tabs */}
-      <div className="flex overflow-x-auto pb-4 mb-4 gap-3 snap-x hide-scrollbar">
+      <div className="flex overflow-x-auto pb-4 mb-4 gap-3 snap-x hide-scrollbar w-full min-w-0">
         {phases.map((phase, index) => (
           <button
             key={phase.id}
             onClick={() => setActiveTab(index)}
-            className={`min-h-[44px] min-w-[44px] whitespace-nowrap px-6 py-3.5 rounded-2xl font-bold text-sm md:text-base transition-all duration-300 snap-start ${
+            className={`min-h-[44px] min-w-[44px] shrink-0 whitespace-nowrap px-6 py-3.5 rounded-2xl font-bold text-sm md:text-base transition-all duration-300 snap-start ${
               activeTab === index 
                 ? 'bg-blue-950 text-white shadow-lg shadow-blue-900/20 scale-105' 
                 : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 hover:text-blue-900'
@@ -78,24 +78,24 @@ export default function SyllabusViewer() {
       {/* Changing Content Area */}
       <div 
         key={activeTab} 
-        className="bg-white/80 p-4 md:p-8 lg:p-10 rounded-3xl border border-slate-200 shadow-sm min-h-[280px] animate-[fadeIn_0.4s_ease-in-out]"
+        className="w-full min-w-0 overflow-hidden bg-white/80 p-4 md:p-8 lg:p-10 rounded-3xl border border-slate-200 shadow-sm min-h-[280px] animate-[fadeIn_0.4s_ease-in-out]"
       >
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-3">
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-blue-900">{phases[activeTab].title}</h3>
-          <span className="inline-flex justify-center bg-emerald-100 text-emerald-700 font-bold px-4 py-1.5 rounded-full text-sm">
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-3 min-w-0">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-blue-900 break-words whitespace-normal min-w-0">{phases[activeTab].title}</h3>
+          <span className="inline-flex justify-center shrink-0 max-w-full truncate bg-emerald-100 text-emerald-700 font-bold px-4 py-1.5 rounded-full text-sm">
             {phases[activeTab].duration}
           </span>
         </div>
         
-        <p className="text-slate-600 mb-8 text-sm md:text-base lg:text-lg leading-relaxed">
+        <p className="text-slate-600 mb-8 text-sm md:text-base lg:text-lg leading-relaxed break-words min-w-0">
           {phases[activeTab].desc}
         </p>
         
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700 font-medium text-sm md:text-base">
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700 font-medium text-sm md:text-base min-w-0">
           {phases[activeTab].points.map((point, idx) => (
-            <li key={idx} className="flex items-start bg-slate-50 p-4 rounded-xl border border-slate-100 hover:shadow-sm transition-shadow">
-              <span className="text-emerald-500 mr-3 text-xl leading-none">✓</span>
-              {point}
+            <li key={idx} className="flex items-start bg-slate-50 p-4 rounded-xl border border-slate-100 hover:shadow-sm transition-shadow min-w-0">
+              <span className="text-emerald-500 mr-3 text-xl leading-none shrink-0">✓</span>
+              <span className="break-words min-w-0">{point}</span>
             </li>
           ))}
         </ul>
