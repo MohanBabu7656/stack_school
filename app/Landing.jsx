@@ -38,11 +38,11 @@ export default function Landing() {
             <Link href="/courses" className="inline-flex items-center justify-center px-8 py-3.5 bg-blue-950 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/30 hover:bg-blue-900 hover:-translate-y-1 transition-all duration-300">View Courses</Link>
             <Link href="/about" className="inline-flex items-center justify-center px-8 py-3.5 bg-white/70 backdrop-blur-md text-orange-600 border border-orange-200 font-semibold rounded-xl hover:bg-white hover:-translate-y-1 transition-all duration-300">About Us</Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-white/40 relative z-10">
-            <div><h4 className="text-3xl md:text-4xl font-black text-blue-950">0</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Alumni Placed Yet</p></div>
-            <div><h4 className="text-3xl md:text-4xl font-black text-emerald-600">Lifetime</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Career Support</p></div>
-            <div><h4 className="text-3xl md:text-4xl font-black text-orange-500">100%</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Transparency</p></div>
-            <div><h4 className="text-3xl md:text-4xl font-black text-blue-950">1-on-1</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Elite Mentorship</p></div>
+          <div className="flex overflow-x-auto md:grid md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-white/40 relative z-10 pb-4 -mx-4 px-4 md:mx-0 md:px-0 snap-x snap-mandatory hide-scrollbar">
+            <div className="w-[45vw] md:w-auto shrink-0 snap-center"><h4 className="text-3xl md:text-4xl font-black text-blue-950">0</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Alumni Placed Yet</p></div>
+            <div className="w-[45vw] md:w-auto shrink-0 snap-center"><h4 className="text-3xl md:text-4xl font-black text-emerald-600">Lifetime</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Career Support</p></div>
+            <div className="w-[45vw] md:w-auto shrink-0 snap-center"><h4 className="text-3xl md:text-4xl font-black text-orange-500">100%</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Transparency</p></div>
+            <div className="w-[45vw] md:w-auto shrink-0 snap-center"><h4 className="text-3xl md:text-4xl font-black text-blue-950">1-on-1</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Elite Mentorship</p></div>
           </div>
         </div>
       </main>

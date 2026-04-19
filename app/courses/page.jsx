@@ -13,9 +13,9 @@ export default function CoursesPage() {
         <div className="absolute top-[-20%] right-[-10%] w-64 h-64 bg-orange-300/20 blur-3xl rounded-full pointer-events-none"></div>
         <div className="absolute bottom-[-20%] left-[-10%] w-64 h-64 bg-emerald-300/20 blur-3xl rounded-full pointer-events-none"></div>
         <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-center text-blue-950 mb-12 drop-shadow-sm">Featured Stacks</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 relative z-10">
+        <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 gap-6 sm:gap-8 pb-8 -mx-6 px-6 sm:mx-0 sm:px-0 snap-x snap-mandatory hide-scrollbar relative z-10">
           
-          <div className="w-full min-w-0 bg-white/60 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-6 md:p-8 hover:shadow-emerald-500/20 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden flex flex-col h-full">
+          <div className="w-[85vw] sm:w-full shrink-0 snap-center min-w-0 bg-white/60 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-6 md:p-8 hover:shadow-emerald-500/20 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden flex flex-col h-full">
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/40 to-transparent -z-10 pointer-events-none"></div>
             <div className="flex justify-between items-start mb-4 gap-2 min-w-0">
               <div className="flex flex-wrap items-center gap-2 sm:gap-3 min-w-0">
@@ -38,7 +38,7 @@ export default function CoursesPage() {
             </div>
           </div>
 
-          <div className="w-full min-w-0 bg-white/60 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-6 md:p-8 hover:shadow-orange-500/20 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden flex flex-col h-full">
+          <div className="w-[85vw] sm:w-full shrink-0 snap-center min-w-0 bg-white/60 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-6 md:p-8 hover:shadow-orange-500/20 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden flex flex-col h-full">
             <div className="absolute inset-0 bg-gradient-to-br from-orange-100/40 to-transparent -z-10 pointer-events-none"></div>
             <div className="flex justify-between items-start mb-4 gap-2 min-w-0"><h4 className="text-xl md:text-2xl lg:text-3xl font-bold text-blue-950 break-words whitespace-normal min-w-0">Java Fullstack</h4><span className="shrink-0 text-orange-600 font-mono font-bold bg-orange-100/80 px-3 py-1 rounded-lg">{'< java >'}</span></div>
             <p className="text-orange-600 font-bold mb-5 text-lg break-words min-w-0">Enterprise-Grade Architecture</p>
