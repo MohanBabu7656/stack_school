@@ -28,7 +28,7 @@ function DockItem({ item, mouseX, baseItemSize, magnification }) {
       onClick={item.onClick}
       style={{ width: size, height: size }}
       whileTap={{ scale: 0.85 }}
-      className="flex flex-col items-center justify-center bg-white/60 backdrop-blur-md border border-white/60 shadow-sm rounded-2xl text-blue-950 hover:text-orange-500 hover:bg-orange-50 transition-colors relative group focus:outline-none"
+      className={`flex shrink-0 flex-col items-center justify-center backdrop-blur-md border shadow-sm rounded-[14px] transition-colors relative group focus:outline-none ${item.isActive ? 'bg-white/90 border-orange-200 text-orange-500 shadow-orange-500/20' : 'bg-white/60 border-white/60 text-blue-950 hover:text-orange-500 hover:bg-orange-50'}`}
     >
       {item.icon}
       <span className="absolute -top-10 bg-blue-950 text-white text-[10px] font-bold px-2.5 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-md">
@@ -43,7 +43,7 @@ export default function Dock({ items, panelHeight = 68, baseItemSize = 50, magni
 
   return (
     <motion.div
-      className="mx-auto flex items-end justify-around gap-2 bg-white/50 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] rounded-3xl px-3 py-2 pb-2.5"
+      className="mx-auto flex items-end justify-center gap-1.5 sm:gap-2 bg-white/60 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] rounded-3xl px-2 py-2"
       style={{ height: panelHeight }}
       onMouseMove={(e) => mouseX.set(e.clientX)}
       onMouseLeave={() => mouseX.set(Infinity)}
