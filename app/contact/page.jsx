@@ -8,8 +8,8 @@ export default function ContactPage() {
     name: '',
     email: '',
     phone: '',
-    course: 'Python Fullstack',
-    message: 'Hi Stack School Team! I am interested in joining and would love to get more details about the curriculum, upcoming cohorts, and the enrollment process.'
+    course: 'Python Fast-Track',
+    message: 'Hi Stack School Team! I am interested in the Python Fast-Track program and would love to get more details about the curriculum, upcoming cohorts, and the enrollment process.'
   });
 
   const handleChange = (e) => {
@@ -71,7 +71,7 @@ export default function ContactPage() {
             <select name="course" value={formData.course} onChange={handleChange} 
               className="px-5 py-3.5 rounded-xl bg-white/50 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all font-medium text-slate-800 cursor-pointer"
             >
-              <option value="Python Fullstack">Python Fullstack</option>
+              <option value="Python Fast-Track">Python Fast-Track</option>
               <option value="Java Fullstack">Java Fullstack</option>
               <option value="Undecided / Other">Undecided / Other</option>
             </select>

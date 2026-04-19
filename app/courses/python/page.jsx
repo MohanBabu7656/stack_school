@@ -21,14 +21,51 @@ export default function PythonCoursePage() {
           Go from zero to deploying interactive data web apps in 8 weeks—using purely Python. Master core programming logic, integrate persistent MySQL databases, and build beautiful frontend UIs using Streamlit without needing HTML or CSS.
         </p>
         
-        <h2 className="text-2xl font-bold text-blue-950 mb-4">Curriculum Highlights</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-          <div className="bg-white/80 p-4 rounded-xl border border-slate-200 shadow-sm"><span className="text-emerald-500 font-bold mr-2">Phase 1:</span> Core Python Mastery (4 Weeks)</div>
-          <div className="bg-white/80 p-4 rounded-xl border border-slate-200 shadow-sm"><span className="text-emerald-500 font-bold mr-2">Phase 2:</span> The Data Layer & MySQL</div>
-          <div className="bg-white/80 p-4 rounded-xl border border-slate-200 shadow-sm"><span className="text-emerald-500 font-bold mr-2">Phase 3:</span> Interactive Frontend (Streamlit)</div>
-          <div className="bg-white/80 p-4 rounded-xl border border-slate-200 shadow-sm"><span className="text-emerald-500 font-bold mr-2">Phase 4:</span> Fullstack Integration & CRUD</div>
-          <div className="bg-white/80 p-4 rounded-xl border border-slate-200 shadow-sm"><span className="text-emerald-500 font-bold mr-2">Focus:</span> Session State & Form Validation</div>
-          <div className="bg-white/80 p-4 rounded-xl border border-slate-200 shadow-sm"><span className="text-emerald-500 font-bold mr-2">Final:</span> Real-World Capstone Dashboard</div>
+        <h2 className="text-3xl font-bold text-blue-950 mb-6 border-b border-slate-200 pb-2">Detailed Syllabus</h2>
+        <div className="space-y-6 mb-12">
+          <div className="bg-white/80 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="text-xl font-bold text-blue-900 mb-2">Phase 1: Core Python Mastery (Weeks 1-4)</h3>
+            <p className="text-slate-600 mb-4">Master the syntax, logic, and data structures of Python from the ground up.</p>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-700 font-medium">
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Fundamentals, Variables & I/O</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Control Flow & Logic (If/Else, Loops)</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Data Structures (Lists, Dictionaries, Tuples)</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Functions, Recursion & Error Handling</li>
+            </ul>
+          </div>
+
+          <div className="bg-white/80 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="text-xl font-bold text-blue-900 mb-2">Phase 2: The Data Layer (Week 5)</h3>
+            <p className="text-slate-600 mb-4">Transition from basic scripts to managing persistent data using relational databases.</p>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-700 font-medium">
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>MySQL Database Fundamentals</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Core & Advanced SQL Queries</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Connecting Python to MySQL</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Building a Python CLI CRUD App</li>
+            </ul>
+          </div>
+
+          <div className="bg-white/80 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="text-xl font-bold text-blue-900 mb-2">Phase 3: The Interactive Frontend (Week 6)</h3>
+            <p className="text-slate-600 mb-4">Turn your Python logic into beautiful, interactive web applications without HTML/CSS.</p>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-700 font-medium">
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Streamlit Basics & Layouts</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Gathering User Data with Input Widgets</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Displaying Data & Simple Charts</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Mastering Session State</li>
+            </ul>
+          </div>
+
+          <div className="bg-white/80 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="text-xl font-bold text-blue-900 mb-2">Phase 4: Fullstack Integration & Capstone (Weeks 7-8)</h3>
+            <p className="text-slate-600 mb-4">Wire the UI, backend logic, and database together into a cohesive, production-ready product.</p>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-700 font-medium">
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Secure Streamlit & MySQL Connections</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Full CRUD Operations via Web UI</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Error Handling & Professional UX</li>
+              <li className="flex items-start"><span className="text-emerald-500 mr-2 text-lg leading-none">✓</span>Capstone: Final Dashboard Project</li>
+            </ul>
+          </div>
         </div>
 
         <div className="flex space-x-4">
