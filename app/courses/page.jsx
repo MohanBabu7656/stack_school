@@ -12,8 +12,11 @@ export default function CoursesPage() {
       <div className="max-w-5xl w-full bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.06)] rounded-3xl p-6 md:p-8 lg:p-12 relative overflow-hidden">
         <div className="absolute top-[-20%] right-[-10%] w-64 h-64 bg-orange-300/20 blur-3xl rounded-full pointer-events-none"></div>
         <div className="absolute bottom-[-20%] left-[-10%] w-64 h-64 bg-emerald-300/20 blur-3xl rounded-full pointer-events-none"></div>
-        <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-center text-blue-950 mb-12 drop-shadow-sm">Featured Stacks</h1>
-        <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 gap-6 sm:gap-8 pb-8 -mx-6 px-6 sm:mx-0 sm:px-0 snap-x snap-mandatory hide-scrollbar relative z-10">
+        <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-center text-blue-950 mb-8 sm:mb-12 drop-shadow-sm">Featured Stacks</h1>
+        <div className="sm:hidden flex items-center justify-end mb-4 pr-2 opacity-80 animate-bounce-x relative z-10">
+          <span className="text-xs font-bold text-orange-500 uppercase tracking-widest flex items-center">Swipe <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+        </div>
+        <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 gap-6 sm:gap-8 pb-8 -mx-6 px-6 sm:mx-0 sm:px-0 snap-x snap-mandatory hide-scrollbar scroll-smooth relative z-10">
           
           <div className="w-[85vw] sm:w-full shrink-0 snap-center min-w-0 bg-white/60 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-6 md:p-8 hover:shadow-emerald-500/20 hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden flex flex-col h-full">
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/40 to-transparent -z-10 pointer-events-none"></div>

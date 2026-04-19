@@ -119,3 +119,22 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Smooth fade-in down animation for the FAQ Accordion contents */
+details[open] > div {
+  animation: fadeInDown 0.3s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gentle horizontal bounce to indicate swiping */
+@keyframes bounce-x {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(15%); }
+}
+.animate-bounce-x {
+  animation: bounce-x 1.5s infinite ease-in-out;
+}

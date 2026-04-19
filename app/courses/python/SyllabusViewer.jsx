@@ -58,6 +58,9 @@ export default function SyllabusViewer() {
 
   return (
     <div className="mb-12">
+      <div className="md:hidden flex items-center justify-end mb-3 pr-2 opacity-80 animate-bounce-x">
+        <span className="text-xs font-bold text-orange-500 uppercase tracking-widest flex items-center">Swipe <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
+      </div>
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
         {/* Interactive Tabs */}
         <div className="flex overflow-x-auto pb-2 gap-3 snap-x hide-scrollbar w-full min-w-0">
