@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function ReferralPage() {
   const [formData, setFormData] = useState({
@@ -48,7 +49,17 @@ export default function ReferralPage() {
             🤝 Referral Program
           </div>
           <h1 className="text-3xl md:text-5xl font-black text-blue-950 mb-4">Claim Your Bonus</h1>
-          <p className="text-slate-600 font-medium">Earn ₹500 for every friend who joins. Tell us who you referred!</p>
+          <p className="text-slate-600 font-medium mb-8">Earn ₹500 for every friend who joins. Tell us who you referred!</p>
+
+          <div className="bg-orange-50 border border-orange-200 p-4 rounded-2xl flex items-start gap-4 text-left shadow-sm">
+            <div className="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-bold">!</div>
+            <div>
+              <p className="text-orange-900 font-bold text-sm">Not Enrolled Yet?</p>
+              <p className="text-orange-700 text-xs font-medium leading-relaxed">
+                If you haven't joined a course yet, please <Link href="/apply" className="underline font-black hover:text-orange-950 transition-colors">Enroll First</Link>. You can only claim referral bonuses once you are an active student.
+              </p>
+            </div>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6 relative z-10">

@@ -25,8 +25,8 @@ export default function TopBanner() {
           Only ₹2,000 for the first 10 students! <span className="text-orange-400">Seats filling fast ⏳</span>
         </p>
         
-        <div className="hidden lg:flex items-center gap-2 border-l border-white/20 pl-6">
-          <a href="/referral" className="text-xs text-emerald-400 font-black tracking-wide uppercase hover:text-emerald-300 transition-colors">
+        <div className="flex items-center gap-2 lg:border-l lg:border-white/20 lg:pl-6">
+          <a href="/referral" className="text-[10px] md:text-xs text-emerald-400 font-black tracking-wide uppercase hover:text-emerald-300 transition-colors bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 lg:bg-transparent lg:p-0 lg:border-0">
             Refer & Earn ₹500 🤝
           </a>
         </div>

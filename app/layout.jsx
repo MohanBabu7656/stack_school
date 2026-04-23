@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 import MobileAppDock from './MobileAppDock';
 import TopBanner from './TopBanner';
+import FloatingNav from './FloatingNav';
 import { Geist } from "next/font/google";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
           </div>
           <Footer />
           <MobileAppDock />
+          <FloatingNav />
         </div>
         <Analytics />
       </body>
