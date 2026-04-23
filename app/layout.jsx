@@ -12,7 +12,29 @@ const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata = {
   title: 'Stack School | Launch Your Tech Career',
-  description: 'Master modern web development and accelerate your career.',
+  description: 'Master modern web development and accelerate your career with intensive bootcamps in Python and Java Fullstack. 1-on-1 mentorship and job-ready skills.',
+  metadataBase: new URL('https://stackschool.in'),
+  openGraph: {
+    title: 'Stack School | Launch Your Tech Career',
+    description: 'Master modern web development and accelerate your career.',
+    url: '/',
+    siteName: 'Stack School',
+    images: [
+      {
+        url: '/stack_school.png',
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Stack School | Launch Your Tech Career',
+    description: 'Master modern web development and accelerate your career.',
+    images: ['/stack_school.png'],
+  },
 }
 
 export default function RootLayout({ children }) {
