@@ -11,19 +11,21 @@ import { Geist } from "next/font/google";
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata = {
-  title: 'Stack School | Launch Your Tech Career',
-  description: 'Master modern web development and accelerate your career with intensive bootcamps in Python and Java Fullstack. 1-on-1 mentorship and job-ready skills.',
+  title: 'Stack School | Best Python & Java Fullstack Coding Bootcamp | 100% Placement Support',
+  description: 'Join Stack School, the premier coding bootcamp for Python Data/Web and Java Fullstack development. Get 1-on-1 mentorship, lifetime career support, and job-ready skills in 8-12 weeks.',
   metadataBase: new URL('https://stackschool.in'),
+  keywords: ['coding bootcamp', 'python course', 'java fullstack', 'web development', 'career transition', 'tech jobs india', 'mentorship'],
   openGraph: {
-    title: 'Stack School | Launch Your Tech Career',
-    description: 'Master modern web development and accelerate your career.',
+    title: 'Stack School | Best Python & Java Fullstack Coding Bootcamp',
+    description: 'Master modern web development and accelerate your career with our intensive tracks.',
     url: '/',
     siteName: 'Stack School',
     images: [
       {
         url: '/stack_school.png',
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 630,
+        alt: 'Stack School - Launch Your Tech Career'
       },
     ],
     locale: 'en_IN',
@@ -66,6 +68,46 @@ export default function RootLayout({ children }) {
           <MobileAppDock />
           <FloatingNav />
         </div>
+        
+        {/* JSON-LD Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Stack School",
+              "url": "https://stackschool.in",
+              "logo": "https://stackschool.in/stack_school.png",
+              "sameAs": [
+                "https://www.instagram.com/stack.school"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-7075775019",
+                "contactType": "customer service",
+                "areaServed": "IN",
+                "availableLanguage": ["en", "tel", "hi"]
+              }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Stack School",
+              "url": "https://stackschool.in",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://stackschool.in/courses?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
         <Analytics />
       </body>
     </html>
