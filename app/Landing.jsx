@@ -1,30 +1,11 @@
 'use client';
 
 import React from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import Link from 'next/link';
-import { captureLead } from './actions';
 import MouseTracker from './MouseTracker';
 import FloatingParticles from './FloatingParticles';
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <motion.button 
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.97 }}
-      type="submit" 
-      disabled={pending}
-      className="px-8 py-4 bg-orange-500 text-white font-bold rounded-xl shadow-lg shadow-orange-500/40 hover:bg-orange-400 hover:-translate-y-1 transition-all duration-300 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
-    >
-      {pending ? 'Sending...' : 'Get My Roadmap'}
-    </motion.button>
-  );
-}
-
 export default function Landing() {
-  // TODO: Update useFormState to useActionState when upgrading to React 19 / Next.js 15
-  const [formState, formAction] = useFormState(captureLead, { success: false, message: '' });
 
   // Setup 3D Tilt Physics for the Hero Card
   const mouseX = useMotionValue(0);
@@ -148,24 +129,7 @@ export default function Landing() {
         </motion.div>
       </section>
 
-      <section id="roadmap" className="px-4 py-20 flex justify-center relative z-10">
-        <div className="max-w-4xl w-full text-center bg-blue-950 rounded-3xl p-10 md:p-16 shadow-2xl shadow-blue-900/40 relative overflow-hidden border border-blue-800">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/20 blur-3xl rounded-full pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/20 blur-3xl rounded-full pointer-events-none"></div>
-          <h3 className="text-3xl md:text-5xl font-extrabold text-white mb-6 relative z-10 drop-shadow-md">Kickstart Your Tech Career</h3>
-          <p className="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto relative z-10 font-medium">Download our <span className="text-orange-400 font-bold">Free Python vs. Java Career Roadmap</span> and discover the path that aligns with your goals.</p>
-          
-          {formState?.success ? (
-            <div className="p-6 bg-emerald-500/20 border border-emerald-400 rounded-xl relative z-10 max-w-xl mx-auto"><h4 className="text-xl font-bold text-emerald-100 mb-2">Success!</h4><p className="text-emerald-50 font-medium">{formState.message}</p></div>
-          ) : (
-            <form action={formAction} className="flex flex-col sm:flex-row max-w-xl mx-auto relative z-10 gap-4">
-              <input type="email" name="email" placeholder="Enter your email address" className="flex-grow px-6 py-4 rounded-xl bg-white/10 border border-blue-700 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all font-medium" required />
-              <SubmitButton />
-            </form>
-          )}
-          {formState?.success === false && formState?.message && <p className="text-red-300 mt-4 relative z-10 font-medium">{formState.message}</p>}
-        </div>
-      </section>
+
     </>
   );
 }

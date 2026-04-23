@@ -1,120 +1,186 @@
 'use client';
 
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function SyllabusViewer() {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeAccordion, setActiveAccordion] = useState(1);
 
   const phases = [
     {
-      id: 'phase-1',
-      title: 'Phase 1: Core Python Mastery',
-      duration: 'Weeks 1-4',
-      desc: 'Master the syntax, logic, and data structures of Python from the ground up.',
+      id: 1,
+      title: 'Fundamentals, Variables, & I/O',
+      duration: 'Week 1',
+      desc: 'The Ecosystem, print(), Math & Operators, Variables & Comments, User Interaction.',
       points: [
-        'Fundamentals, Variables & I/O',
-        'Control Flow & Logic (If/Else, Loops)',
-        'Data Structures (Lists, Dictionaries, Tuples)',
-        'Functions, Recursion & Error Handling'
+        'Computer Architecture & IDE Setup',
+        'print() Function & Literals',
+        'Math Operators & Variables',
+        'User input() & Type Casting'
       ]
     },
     {
-      id: 'phase-2',
-      title: 'Phase 2: The Data Layer',
+      id: 2,
+      title: 'Control Flow & Logic',
+      duration: 'Week 2',
+      desc: 'Master conditional statements, loops, and basic algorithm practice.',
+      points: [
+        'Equality & Comparison Operators',
+        'Logical Expressions & Bits',
+        'While Loops & For Loops',
+        'Algorithm Practice (Collatz)'
+      ]
+    },
+    {
+      id: 3,
+      title: 'Data Structures',
+      duration: 'Week 3',
+      desc: 'Work with complex data structures like lists, tuples, and dictionaries.',
+      points: [
+        'Lists Basics & Advanced Slicing',
+        'Bubble Sort Algorithm',
+        'Tuples & Mutability',
+        'Dictionaries & Key-Value Pairs'
+      ]
+    },
+    {
+      id: 4,
+      title: 'Functions & Error Handling',
+      duration: 'Week 4',
+      desc: 'Learn decomposition, function definitions, and graceful error handling.',
+      points: [
+        'Function Basics & Scopes',
+        'Return Instructions & None',
+        'Advanced Functions & Recursion',
+        'Exceptions & Print Debugging'
+      ]
+    },
+    {
+      id: 5,
+      title: 'MySQL Integration',
       duration: 'Week 5',
-      desc: 'Transition from basic scripts to managing persistent data using relational databases.',
+      desc: 'Transition to persistent data using relational databases and Python\'s MySQL connector.',
       points: [
-        'MySQL Database Fundamentals',
-        'Core & Advanced SQL Queries',
-        'Connecting Python to MySQL',
-        'Building a Python CLI CRUD App'
+        'Database Fundamentals & Setup',
+        'Core SQL Queries (CRUD)',
+        'Advanced SQL (Primary Keys, JOINs)',
+        'Python to MySQL Connection'
       ]
     },
     {
-      id: 'phase-3',
-      title: 'Phase 3: The Interactive Frontend',
+      id: 6,
+      title: 'Streamlit Mastery',
       duration: 'Week 6',
-      desc: 'Turn your Python logic into beautiful, interactive web applications without HTML/CSS.',
+      desc: 'Turn Python logic into interactive web applications without HTML/CSS.',
       points: [
-        'Streamlit Basics & Layouts',
-        'Gathering User Data with Input Widgets',
+        'Streamlit Basics & Text Elements',
+        'Input Widgets & Gathering Data',
         'Displaying Data & Simple Charts',
-        'Mastering Session State'
+        'Layouts & Session State'
       ]
     },
     {
-      id: 'phase-4',
-      title: 'Phase 4: Fullstack Integration & Capstone',
-      duration: 'Weeks 7-8',
-      desc: 'Wire the UI, backend logic, and database together into a cohesive, production-ready product.',
+      id: 7,
+      title: 'Connecting Streamlit & MySQL',
+      duration: 'Week 7',
+      desc: 'Wire the UI and the database together into a cohesive web product.',
       points: [
-        'Secure Streamlit & MySQL Connections',
-        'Full CRUD Operations via Web UI',
-        'Error Handling & Professional UX',
-        'Capstone: Final Dashboard Project'
+        'Secure Connections to MySQL',
+        'Creating Data with st.form',
+        'Updating & Deleting Records',
+        'Error Handling & Real-time Dashboards'
+      ]
+    },
+    {
+      id: 8,
+      title: 'The Capstone Project',
+      duration: 'Week 8',
+      desc: 'Build a fully functional, single-page Dashboard reading/writing to MySQL in real-time.',
+      points: [
+        'Architecture & DB Schema Design',
+        'Database & Backend Build',
+        'Frontend UI Build & Testing',
+        'Polish, Visualization & Final Presentation'
       ]
     }
   ];
 
+  const toggleAccordion = (id) => {
+    setActiveAccordion(activeAccordion === id ? null : id);
+  };
+
   return (
-    <div className="mb-12">
-      <div className="md:hidden flex items-center justify-end mb-3 pr-2 opacity-80 animate-bounce-x">
-        <span className="text-xs font-bold text-orange-500 uppercase tracking-widest flex items-center">Swipe <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
-      </div>
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-        {/* Interactive Tabs */}
-        <div className="flex overflow-x-auto pb-2 gap-3 snap-x hide-scrollbar w-full min-w-0">
-          {phases.map((phase, index) => (
-            <button
-              key={phase.id}
-              onClick={() => setActiveTab(index)}
-              className={`min-h-[44px] min-w-[44px] shrink-0 whitespace-nowrap px-6 py-3.5 rounded-2xl font-bold text-sm md:text-base transition-all duration-300 snap-start ${
-                activeTab === index 
-                  ? 'bg-blue-950 text-white shadow-lg shadow-blue-900/20 scale-105' 
-                  : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 hover:text-blue-900'
+    <div className="flex flex-col gap-3">
+      <div className="space-y-3 w-full">
+        {phases.map((phase) => {
+          const isOpen = activeAccordion === phase.id;
+          return (
+            <div 
+              key={phase.id} 
+              className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                isOpen 
+                  ? 'bg-white shadow-md border-emerald-200' 
+                  : 'bg-white/60 hover:bg-white/80 border-slate-200'
               }`}
             >
-              {phase.title.split(':')[0]}
-            </button>
-          ))}
-        </div>
-        
-        <a 
-          href="/pdfs/Python%20Fast-Track.pdf" 
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-          className="shrink-0 flex items-center justify-center gap-2 px-5 py-3 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 border border-emerald-200 rounded-xl font-bold text-sm transition-all duration-300 shadow-sm"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          Download PDF
-        </a>
-      </div>
+              <button
+                onClick={() => toggleAccordion(phase.id)}
+                className="w-full flex items-center justify-between p-4 text-left focus:outline-none"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 pr-4">
+                  <h3 className={`font-bold text-sm md:text-base transition-colors ${isOpen ? 'text-emerald-700' : 'text-blue-950'}`}>
+                    {phase.title}
+                  </h3>
+                  <span className={`inline-flex shrink-0 text-xs font-bold px-3 py-1 rounded-full transition-colors ${isOpen ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600'}`}>
+                    {phase.duration}
+                  </span>
+                </div>
+                <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-100 text-slate-500'}`}>
+                  <motion.svg 
+                    animate={{ rotate: isOpen ? 180 : 0 }} 
+                    transition={{ duration: 0.3 }}
+                    className="w-5 h-5" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                  </motion.svg>
+                </div>
+              </button>
 
-      {/* Changing Content Area */}
-      <div 
-        key={activeTab} 
-        className="w-full min-w-0 overflow-hidden bg-white/80 p-4 md:p-8 lg:p-10 rounded-3xl border border-slate-200 shadow-sm min-h-[280px] animate-[fadeIn_0.4s_ease-in-out]"
-      >
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-3 min-w-0">
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-blue-900 break-words whitespace-normal min-w-0">{phases[activeTab].title}</h3>
-          <span className="inline-flex justify-center shrink-0 max-w-full truncate bg-emerald-100 text-emerald-700 font-bold px-4 py-1.5 rounded-full text-sm">
-            {phases[activeTab].duration}
-          </span>
-        </div>
-        
-        <p className="text-slate-600 mb-8 text-sm md:text-base lg:text-lg leading-relaxed break-words min-w-0">
-          {phases[activeTab].desc}
-        </p>
-        
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700 font-medium text-sm md:text-base min-w-0">
-          {phases[activeTab].points.map((point, idx) => (
-            <li key={idx} className="flex items-start bg-slate-50 p-4 rounded-xl border border-slate-100 hover:shadow-sm transition-shadow min-w-0">
-              <span className="text-emerald-500 mr-3 text-xl leading-none shrink-0">✓</span>
-              <span className="break-words min-w-0">{point}</span>
-            </li>
-          ))}
-        </ul>
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    initial="collapsed"
+                    animate="open"
+                    exit="collapsed"
+                    variants={{
+                      open: { opacity: 1, height: "auto" },
+                      collapsed: { opacity: 0, height: 0 }
+                    }}
+                    transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+                  >
+                    <div className="p-4 pt-0 border-t border-slate-100">
+                      <p className="text-slate-600 mb-4 mt-3 text-xs md:text-sm leading-relaxed">
+                        {phase.desc}
+                      </p>
+                      
+                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-slate-700 font-medium text-xs md:text-sm">
+                        {phase.points.map((point, idx) => (
+                          <li key={idx} className="flex items-start bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                            <span className="text-emerald-500 mr-2 text-base leading-none shrink-0 mt-[1px]">✓</span>
+                            <span className="leading-snug">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
