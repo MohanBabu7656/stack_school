@@ -26,9 +26,9 @@ export default function TopBanner() {
         </p>
         
         <div className="hidden lg:flex items-center gap-2 border-l border-white/20 pl-6">
-          <p className="text-xs text-emerald-400 font-black tracking-wide uppercase">
-            Refer & Earn ₹500
-          </p>
+          <a href="/referral" className="text-xs text-emerald-400 font-black tracking-wide uppercase hover:text-emerald-300 transition-colors">
+            Refer & Earn ₹500 🤝
+          </a>
         </div>
       </div>
     </motion.div>

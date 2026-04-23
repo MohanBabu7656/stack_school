@@ -51,7 +51,7 @@ export default function PricingCard({ courseName = "Full Course", className = ""
             <p className="text-white font-black text-sm uppercase tracking-wider">Refer & Learn for FREE</p>
           </div>
           <p className="text-blue-100 text-xs font-medium leading-relaxed">
-            Get <span className="text-orange-400 font-black">₹500 Referral Bonus</span> for every friend who joins. Refer 4 friends and your course fee becomes <span className="text-white font-black underline underline-offset-4">ZERO!</span>
+            Get <span className="text-orange-400 font-black">₹500 Referral Bonus</span> for every friend who joins. Once you and your friend enroll, claim your bonus on our <Link href="/referral" className="text-white underline font-bold hover:text-orange-400 transition-colors">Referral Page</Link>!
           </p>
         </div>
         
