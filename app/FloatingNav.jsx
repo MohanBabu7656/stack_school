@@ -1,11 +1,25 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
 export default function FloatingNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasHinted, setHasHinted] = useState(false);
+
+  useEffect(() => {
+    // Show a quick hint that this button is interactive
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+      setTimeout(() => {
+        setIsOpen(false);
+        setHasHinted(true);
+      }, 2000); // Keep open for 2 seconds
+    }, 1500); // Open after 1.5 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const menuItems = [
     { label: 'Courses', href: '/courses', icon: '📚', color: 'bg-emerald-500' },
