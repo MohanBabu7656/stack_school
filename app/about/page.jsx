@@ -38,6 +38,21 @@ export default function AboutPage() {
           <p className="text-slate-700 font-medium">Gain access to expert mentorship, interview preparation, and a vast network of hiring partners.</p>
         </div>
       </div>
+
+      <div className="mt-20 max-w-2xl w-full text-center">
+        <h2 className="text-3xl font-bold text-blue-950 mb-6">Stay Connected</h2>
+        <p className="text-slate-600 font-medium mb-8">Follow us on Instagram for daily coding tips, alumni success stories, and bootcamp updates.</p>
+        <a 
+          href="https://www.instagram.com/stack.school?igsh=dmptMDlsZzY5cDk5" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] text-white font-bold rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300 group"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          <span>Follow @stack.school</span>
+          <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </div>
     </main>
   );
 }

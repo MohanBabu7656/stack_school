@@ -45,7 +45,16 @@ export default function Header() {
         )}
       </nav>
 
-      <div className="hidden md:flex items-center space-x-4">
+      <div className="hidden md:flex items-center space-x-6">
+        <a 
+          href="https://www.instagram.com/stack.school?igsh=dmptMDlsZzY5cDk5" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-blue-950 hover:text-orange-500 transition-all duration-300 hover:scale-110 active:scale-95"
+          title="Follow us on Instagram"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
         <Link 
           href={!isCareerTools ? "/career-tools" : "/"} 
           className="text-blue-950 font-semibold hover:text-orange-500 transition-colors"
@@ -100,6 +109,17 @@ export default function Header() {
                 <Link href="/placements" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname.startsWith('/placements') ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Placements</Link>
                 <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname === '/about' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>About Us</Link>
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`block transition-colors ${pathname === '/contact' ? 'text-orange-500 font-bold' : 'hover:text-orange-500'}`}>Contact</Link>
+                
+                <a 
+                  href="https://www.instagram.com/stack.school?igsh=dmptMDlsZzY5cDk5" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-slate-600 hover:text-orange-500 transition-colors py-1"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  <span className="text-sm font-semibold tracking-wide">Instagram</span>
+                </a>
+
                 <hr className="border-slate-200 border-dashed" />
               </>
             )}
