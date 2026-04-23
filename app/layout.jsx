@@ -2,8 +2,7 @@ import './globals.css'
 import Header from './Header';
 import Footer from './Footer';
 import { Analytics } from '@vercel/analytics/react';
-import MouseTracker from './MouseTracker';
-import FloatingParticles from './FloatingParticles';
+
 import MobileAppDock from './MobileAppDock';
 import { Geist } from "next/font/google";
 
@@ -19,9 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`font-sans ${geist.variable}`}>
       <body className="min-h-screen bg-slate-50 font-sans flex flex-col relative overflow-x-hidden selection:bg-orange-500 selection:text-white">
         
-        {/* Interactive Background Effects */}
-        <MouseTracker />
-        <FloatingParticles />
+
 
         {/* Background Gradients & Textures for Glassmorphism Context */}
         <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">

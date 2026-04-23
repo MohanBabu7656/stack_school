@@ -5,7 +5,8 @@ import { useFormState, useFormStatus } from 'react-dom';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import Link from 'next/link';
 import { captureLead } from './actions';
-
+import MouseTracker from './MouseTracker';
+import FloatingParticles from './FloatingParticles';
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
@@ -22,6 +23,7 @@ function SubmitButton() {
 }
 
 export default function Landing() {
+  // TODO: Update useFormState to useActionState when upgrading to React 19 / Next.js 15
   const [formState, formAction] = useFormState(captureLead, { success: false, message: '' });
 
   // Setup 3D Tilt Physics for the Hero Card
@@ -45,6 +47,8 @@ export default function Landing() {
 
   return (
     <>
+      <MouseTracker />
+      <FloatingParticles />
       <main className="flex-grow flex flex-col items-center justify-center text-center px-4 py-20 md:py-32 perspective-1000 relative">
         {/* Animated Tech Grid & Glowing Orbs Background */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">

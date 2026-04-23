@@ -9,7 +9,7 @@ export default function TrackedEnrollButton({ courseName, href, className, child
 
   if (isInternal) {
     return (
-      <Link href={href} className={className} onClick={() => track('Enrollment Clicked', { course: courseName })}>
+      <Link href={href} className={className} target={target} onClick={() => track('Enrollment Clicked', { course: courseName })}>
         {children}
       </Link>
     );

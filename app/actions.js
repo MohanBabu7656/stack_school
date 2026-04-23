@@ -1,7 +1,6 @@
 'use server';
 import { Resend } from 'resend';
-import fs from 'fs';
-import path from 'path';
+
 
 // Initialize Resend with the API key from your .env.local file
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -49,7 +48,7 @@ export async function captureLead(prevState, formData) {
 
     // ACTUAL FUNCTIONALITY: Send the roadmap email to the user
     const { data, error } = await resend.emails.send({
-      from: 'Stack School <hello@yourdomain.com>', // Note: You must verify this domain in your Resend dashboard
+      from: process.env.RESEND_FROM_EMAIL || 'Stack School <hello@yourdomain.com>', // Note: You must verify this domain in your Resend dashboard
       to: [email],
       subject: 'Here is your Free Tech Career Roadmap! 🚀',
       html: emailHtml,
