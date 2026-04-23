@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import TrackedEnrollButton from '../../TrackedEnrollButton';
 import SyllabusViewer from './SyllabusViewer';
+import PricingCard from '../../PricingCard';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -76,29 +77,33 @@ export default function PythonPageContent() {
           </motion.p>
         </div>
 
-        {/* Right Column: SyllabusViewer */}
-        <motion.div variants={itemVariants} className="lg:col-span-7 bg-white/60 backdrop-blur-xl border border-white/60 rounded-3xl p-6 shadow-xl relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none"></div>
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 relative z-10 gap-4">
-            <h2 className="text-2xl font-bold text-blue-950 flex items-center gap-3">
-              <svg className="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-              Interactive Syllabus
-            </h2>
-            <a 
-              href="/pdfs/Python%20Fast-Track.pdf" 
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0 flex items-center justify-center gap-2 px-5 py-2.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 border border-emerald-200 rounded-xl font-bold text-sm transition-all duration-300 shadow-sm self-start sm:self-auto"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-              Download PDF
-            </a>
-          </div>
-          <div className="relative z-10">
-            <SyllabusViewer />
-          </div>
-        </motion.div>
+        {/* Right Column: SyllabusViewer & Pricing */}
+        <div className="lg:col-span-7 space-y-8">
+          <motion.div variants={itemVariants} className="bg-white/60 backdrop-blur-xl border border-white/60 rounded-3xl p-6 shadow-xl relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none"></div>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 relative z-10 gap-4">
+              <h2 className="text-2xl font-bold text-blue-950 flex items-center gap-3">
+                <svg className="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                Interactive Syllabus
+              </h2>
+              <a 
+                href="/pdfs/Python%20Fast-Track.pdf" 
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 flex items-center justify-center gap-2 px-5 py-2.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 hover:text-emerald-800 border border-emerald-200 rounded-xl font-bold text-sm transition-all duration-300 shadow-sm self-start sm:self-auto"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Download PDF
+              </a>
+            </div>
+            <div className="relative z-10">
+              <SyllabusViewer />
+            </div>
+          </motion.div>
+
+          <PricingCard courseName="Python Fast-Track" />
+        </div>
       </motion.div>
     </div>
   );

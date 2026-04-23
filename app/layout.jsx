@@ -4,6 +4,7 @@ import Footer from './Footer';
 import { Analytics } from '@vercel/analytics/react';
 
 import MobileAppDock from './MobileAppDock';
+import TopBanner from './TopBanner';
 import { Geist } from "next/font/google";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
         </div>
 
         <div className="relative z-10 flex flex-col min-h-screen">
+          <TopBanner />
           <Header />
           <div className="flex-grow pb-24 md:pb-0 flex flex-col">
             {children}
