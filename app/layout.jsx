@@ -37,6 +37,9 @@ export const metadata = {
     description: 'Master modern web development and accelerate your career.',
     images: ['/stack_school.png'],
   },
+  verification: {
+    google: 'Yu1irs11PRwVHunKoUf8nxD4153i4MU2_KRjzNjr7yk',
+  },
 }
 
 export default function RootLayout({ children }) {
