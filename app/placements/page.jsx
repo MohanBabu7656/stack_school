@@ -1,11 +1,30 @@
-import React from 'react';
+'use client';
 
-export const metadata = {
-  title: 'Placements & Alumni | Stack School',
-  description: 'See where our alumni are working and our placement statistics.',
-};
+import React, { useRef, useState } from 'react';
+import Link from 'next/link';
 
 export default function PlacementsPage() {
+  const statsRef = useRef(null);
+  const supportRef = useRef(null);
+  const [activeStatsIndex, setActiveStatsIndex] = useState(0);
+  const [activeSupportIndex, setActiveSupportIndex] = useState(0);
+
+  const handleStatsScroll = () => {
+    if (statsRef.current) {
+      const scrollLeft = statsRef.current.scrollLeft;
+      const index = Math.round(scrollLeft / (window.innerWidth * 0.8)); // 80vw
+      setActiveStatsIndex(index >= 0 && index <= 2 ? index : activeStatsIndex);
+    }
+  };
+
+  const handleSupportScroll = () => {
+    if (supportRef.current) {
+      const scrollLeft = supportRef.current.scrollLeft;
+      const index = Math.round(scrollLeft / (window.innerWidth * 0.75)); // 75vw
+      setActiveSupportIndex(index >= 0 && index <= 2 ? index : activeSupportIndex);
+    }
+  };
+
   return (
     <main className="flex-grow px-4 py-20 md:py-32 flex flex-col items-center relative z-10">
       <div className="max-w-4xl text-center mb-16">
@@ -17,21 +36,42 @@ export default function PlacementsPage() {
         <div className="md:hidden flex items-center justify-end mb-4 pr-2 opacity-80 animate-bounce-x relative z-10">
           <span className="text-xs font-bold text-orange-500 uppercase tracking-widest flex items-center">Swipe <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
         </div>
-        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-4 md:gap-6 pb-4 -mx-4 px-4 md:mx-0 md:px-0 snap-x snap-mandatory hide-scrollbar scroll-smooth">
-          <div className="w-[80vw] md:w-auto shrink-0 snap-center bg-white/60 backdrop-blur-xl border border-white/60 shadow-md rounded-3xl p-8 text-center hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center">
-            <h4 className="text-5xl font-black text-blue-950 mb-2">0</h4>
-            <p className="text-sm text-slate-600 font-bold uppercase tracking-wider mb-2">Alumni Placed Yet</p>
-            <p className="text-xs text-slate-500 font-medium px-4">We are a brand new bootcamp! Our very first cohort is currently in training.</p>
+        
+        <div className="relative group/stats">
+          {/* Edge Fades */}
+          <div className="md:hidden absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-slate-50 to-transparent z-20 pointer-events-none"></div>
+          <div className="md:hidden absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-slate-50 to-transparent z-20 pointer-events-none"></div>
+
+          <div 
+            ref={statsRef}
+            onScroll={handleStatsScroll}
+            className="flex overflow-x-auto md:grid md:grid-cols-3 gap-4 md:gap-6 pb-4 -mx-4 px-4 md:mx-0 md:px-0 snap-x snap-mandatory hide-scrollbar scroll-smooth relative z-10"
+          >
+            <div className="w-[80vw] md:w-auto shrink-0 snap-center bg-white/60 backdrop-blur-xl border border-white/60 shadow-md rounded-3xl p-8 text-center hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center">
+              <h4 className="text-5xl font-black text-blue-950 mb-2">0</h4>
+              <p className="text-sm text-slate-600 font-bold uppercase tracking-wider mb-2">Alumni Placed Yet</p>
+              <p className="text-xs text-slate-500 font-medium px-4">We are a brand new bootcamp! Our very first cohort is currently in training.</p>
+            </div>
+            <div className="w-[80vw] md:w-auto shrink-0 snap-center bg-white/60 backdrop-blur-xl border border-white/60 shadow-md rounded-3xl p-8 text-center hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center border-emerald-200">
+              <h4 className="text-5xl font-black text-emerald-600 mb-2">Lifetime</h4>
+              <p className="text-sm text-slate-600 font-bold uppercase tracking-wider mb-2">Career Support</p>
+              <p className="text-xs text-slate-500 font-medium px-4">We stand by our students with unlimited interview prep until you get hired.</p>
+            </div>
+            <div className="w-[80vw] md:w-auto shrink-0 snap-center bg-white/60 backdrop-blur-xl border border-white/60 shadow-md rounded-3xl p-8 text-center hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center border-orange-200">
+              <h4 className="text-5xl font-black text-orange-500 mb-2">100%</h4>
+              <p className="text-sm text-slate-600 font-bold uppercase tracking-wider mb-2">Transparency</p>
+              <p className="text-xs text-slate-500 font-medium px-4">We grow when you grow. Your career success is our absolute highest priority.</p>
+            </div>
           </div>
-          <div className="w-[80vw] md:w-auto shrink-0 snap-center bg-white/60 backdrop-blur-xl border border-white/60 shadow-md rounded-3xl p-8 text-center hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center border-emerald-200">
-            <h4 className="text-5xl font-black text-emerald-600 mb-2">Lifetime</h4>
-            <p className="text-sm text-slate-600 font-bold uppercase tracking-wider mb-2">Career Support</p>
-            <p className="text-xs text-slate-500 font-medium px-4">We stand by our students with unlimited interview prep until you get hired.</p>
-          </div>
-          <div className="w-[80vw] md:w-auto shrink-0 snap-center bg-white/60 backdrop-blur-xl border border-white/60 shadow-md rounded-3xl p-8 text-center hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-center">
-            <h4 className="text-5xl font-black text-orange-500 mb-2">100%</h4>
-            <p className="text-sm text-slate-600 font-bold uppercase tracking-wider mb-2">Transparency</p>
-            <p className="text-xs text-slate-500 font-medium px-4">We grow when you grow. Your career success is our absolute highest priority.</p>
+
+          {/* Pagination Dots */}
+          <div className="md:hidden flex justify-center space-x-1.5 mt-4">
+            {[0, 1, 2].map((i) => (
+              <div 
+                key={i} 
+                className={`h-1.5 rounded-full transition-all duration-300 ${activeStatsIndex === i ? 'w-4 bg-orange-500' : 'w-1.5 bg-slate-300'}`}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -47,18 +87,39 @@ export default function PlacementsPage() {
         <div className="md:hidden flex items-center justify-end mb-4 pr-2 opacity-80 animate-bounce-x relative z-10">
           <span className="text-xs font-bold text-orange-500 uppercase tracking-widest flex items-center">Swipe <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
         </div>
-        <div className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 md:gap-8 relative z-10 pb-6 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory hide-scrollbar scroll-smooth">
-          <div className="w-[75vw] md:w-auto shrink-0 snap-center text-center bg-white/50 p-6 rounded-2xl border border-white/60 shadow-sm">
-            <div className="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4"><svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
-            <h4 className="text-xl font-bold text-blue-950 mb-2">Resume & Portfolio</h4><p className="text-slate-600 text-sm font-medium">Access our <a href="https://resumescorerfrontend.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-orange-600 font-bold underline">AI Resume Scorer</a> and get 1-on-1 help crafting a GitHub portfolio that catches recruiters' eyes.</p>
+
+        <div className="relative group/support">
+          {/* Edge Fades */}
+          <div className="md:hidden absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white/40 to-transparent z-20 pointer-events-none"></div>
+          <div className="md:hidden absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white/40 to-transparent z-20 pointer-events-none"></div>
+
+          <div 
+            ref={supportRef}
+            onScroll={handleSupportScroll}
+            className="flex overflow-x-auto md:grid md:grid-cols-3 gap-6 md:gap-8 relative z-10 pb-6 -mx-6 px-6 md:mx-0 md:px-0 snap-x snap-mandatory hide-scrollbar scroll-smooth"
+          >
+            <div className="w-[75vw] md:w-auto shrink-0 snap-center text-center bg-white/50 p-6 rounded-2xl border border-white/60 shadow-sm">
+              <div className="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4"><svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+              <h4 className="text-xl font-bold text-blue-950 mb-2">Resume & Portfolio</h4><p className="text-slate-600 text-sm font-medium">Access our <a href="https://resumescorerfrontend.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-orange-600 font-bold underline">AI Resume Scorer</a> and get 1-on-1 help crafting a GitHub portfolio that catches recruiters' eyes.</p>
+            </div>
+            <div className="w-[75vw] md:w-auto shrink-0 snap-center text-center bg-white/50 p-6 rounded-2xl border border-white/60 shadow-sm">
+              <div className="w-16 h-16 mx-auto bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-4"><svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg></div>
+              <h4 className="text-xl font-bold text-blue-950 mb-2">Mock Interviews</h4><p className="text-slate-600 text-sm font-medium">Practice technical and behavioral interviews 1-on-1 with industry veterans.</p>
+            </div>
+            <div className="w-[75vw] md:w-auto shrink-0 snap-center text-center bg-white/50 p-6 rounded-2xl border border-white/60 shadow-sm">
+              <div className="w-16 h-16 mx-auto bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4"><svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg></div>
+              <h4 className="text-xl font-bold text-blue-950 mb-2">Job Referrals</h4><p className="text-slate-600 text-sm font-medium">Tap into our personal network of hiring managers and internal recruiters.</p>
+            </div>
           </div>
-          <div className="w-[75vw] md:w-auto shrink-0 snap-center text-center bg-white/50 p-6 rounded-2xl border border-white/60 shadow-sm">
-            <div className="w-16 h-16 mx-auto bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-4"><svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg></div>
-            <h4 className="text-xl font-bold text-blue-950 mb-2">Mock Interviews</h4><p className="text-slate-600 text-sm font-medium">Practice technical and behavioral interviews 1-on-1 with industry veterans.</p>
-          </div>
-          <div className="w-[75vw] md:w-auto shrink-0 snap-center text-center bg-white/50 p-6 rounded-2xl border border-white/60 shadow-sm">
-            <div className="w-16 h-16 mx-auto bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4"><svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg></div>
-            <h4 className="text-xl font-bold text-blue-950 mb-2">Job Referrals</h4><p className="text-slate-600 text-sm font-medium">Tap into our personal network of hiring managers and internal recruiters.</p>
+
+          {/* Pagination Dots */}
+          <div className="md:hidden flex justify-center space-x-1.5 mt-4">
+            {[0, 1, 2].map((i) => (
+              <div 
+                key={i} 
+                className={`h-1.5 rounded-full transition-all duration-300 ${activeSupportIndex === i ? 'w-4 bg-orange-500' : 'w-1.5 bg-slate-300'}`}
+              />
+            ))}
           </div>
         </div>
       </div>

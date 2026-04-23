@@ -1,11 +1,23 @@
 'use client';
 
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import Link from 'next/link';
 import MouseTracker from './MouseTracker';
 import FloatingParticles from './FloatingParticles';
+
 export default function Landing() {
+  const containerRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = () => {
+    if (containerRef.current) {
+      const scrollLeft = containerRef.current.scrollLeft;
+      const cardWidth = window.innerWidth * 0.7; // 70vw
+      const index = Math.round(scrollLeft / cardWidth);
+      setActiveIndex(index >= 0 && index <= 3 ? index : activeIndex);
+    }
+  };
 
   // Setup 3D Tilt Physics for the Hero Card
   const mouseX = useMotionValue(0);
@@ -100,11 +112,44 @@ export default function Landing() {
             <div className="md:hidden flex items-center justify-end mb-4 pr-2 opacity-80 animate-bounce-x">
               <span className="text-xs font-bold text-orange-500 uppercase tracking-widest flex items-center">Swipe <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></span>
             </div>
-            <div className="flex overflow-x-auto md:grid md:grid-cols-4 gap-6 pb-4 -mx-4 px-4 md:mx-0 md:px-0 snap-x snap-mandatory hide-scrollbar scroll-smooth">
-              <div className="w-[45vw] md:w-auto shrink-0 snap-center"><h4 className="text-3xl md:text-4xl font-black text-blue-950">0</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Alumni Placed Yet</p></div>
-              <div className="w-[45vw] md:w-auto shrink-0 snap-center"><h4 className="text-3xl md:text-4xl font-black text-emerald-600">Lifetime</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Career Support</p></div>
-              <div className="w-[45vw] md:w-auto shrink-0 snap-center"><h4 className="text-3xl md:text-4xl font-black text-orange-500">100%</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Transparency</p></div>
-              <div className="w-[45vw] md:w-auto shrink-0 snap-center"><h4 className="text-3xl md:text-4xl font-black text-blue-950">1-on-1</h4><p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Elite Mentorship</p></div>
+            
+            <div className="relative group/carousel">
+              {/* Edge Fades - Adjusted for better contrast on cards */}
+              <div className="md:hidden absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white/60 via-white/20 to-transparent z-20 pointer-events-none"></div>
+              <div className="md:hidden absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white/60 via-white/20 to-transparent z-20 pointer-events-none"></div>
+
+              <div 
+                ref={containerRef}
+                onScroll={handleScroll}
+                className="flex overflow-x-auto md:grid md:grid-cols-4 gap-6 pb-6 -mx-4 px-8 md:mx-0 md:px-0 snap-x snap-mandatory hide-scrollbar scroll-smooth relative z-10"
+              >
+                <div className="w-[70vw] md:w-auto shrink-0 snap-center bg-white/80 backdrop-blur-xl border border-white shadow-[0_10px_30px_-10px_rgba(23,37,84,0.2)] rounded-2xl p-6 flex flex-col items-center justify-center group-hover:shadow-[0_20px_40px_-15px_rgba(23,37,84,0.3)] transition-all duration-500">
+                  <h4 className="text-4xl md:text-4xl font-black text-blue-950">0</h4>
+                  <p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Alumni Placed Yet</p>
+                </div>
+                <div className="w-[70vw] md:w-auto shrink-0 snap-center bg-white/80 backdrop-blur-xl border border-emerald-200 shadow-[0_10px_30px_-10px_rgba(16,185,129,0.2)] rounded-2xl p-6 flex flex-col items-center justify-center group-hover:shadow-[0_20px_40px_-15px_rgba(16,185,129,0.3)] transition-all duration-500">
+                  <h4 className="text-4xl md:text-4xl font-black text-emerald-600">Lifetime</h4>
+                  <p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Career Support</p>
+                </div>
+                <div className="w-[70vw] md:w-auto shrink-0 snap-center bg-white/80 backdrop-blur-xl border border-orange-200 shadow-[0_10px_30px_-10px_rgba(249,115,22,0.2)] rounded-2xl p-6 flex flex-col items-center justify-center group-hover:shadow-[0_20px_40px_-15px_rgba(249,115,22,0.3)] transition-all duration-500">
+                  <h4 className="text-4xl md:text-4xl font-black text-orange-500">100%</h4>
+                  <p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Transparency</p>
+                </div>
+                <div className="w-[70vw] md:w-auto shrink-0 snap-center bg-white/80 backdrop-blur-xl border border-white shadow-[0_10px_30px_-10px_rgba(23,37,84,0.2)] rounded-2xl p-6 flex flex-col items-center justify-center group-hover:shadow-[0_20px_40px_-15px_rgba(23,37,84,0.3)] transition-all duration-500">
+                  <h4 className="text-4xl md:text-4xl font-black text-blue-950">1-on-1</h4>
+                  <p className="text-xs md:text-sm text-slate-700 font-bold uppercase tracking-wide mt-1">Elite Mentorship</p>
+                </div>
+              </div>
+
+              {/* Pagination Dots */}
+              <div className="md:hidden flex justify-center space-x-2 mt-4">
+                {[0, 1, 2, 3].map((i) => (
+                  <div 
+                    key={i} 
+                    className={`h-2 rounded-full transition-all duration-500 ${activeIndex === i ? 'w-8 bg-orange-500 shadow-md' : 'w-2 bg-slate-300'}`}
+                  />
+                ))}
+              </div>
             </div>
           </motion.div>
         </motion.div>
@@ -128,8 +173,6 @@ export default function Landing() {
           <span>AWS</span>
         </motion.div>
       </section>
-
-
     </>
   );
 }
