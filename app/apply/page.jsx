@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { track } from '@vercel/analytics';
+import AnimatedPrice from '../AnimatedPrice';
 
 export default function ApplyPage() {
   // Define your URLs. We fallback to your provided Mock Interview link if the environment variable isn't set yet.
@@ -39,9 +40,35 @@ export default function ApplyPage() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bg-white/60 backdrop-blur-xl border border-white/60 hover:border-emerald-200 rounded-3xl p-6 md:p-8 shadow-lg shadow-blue-900/5 flex flex-col relative transition-all group"
           >
+            <motion.div 
+              animate={{ rotate: [0, -10, 10, -10, 10, 0] }} 
+              transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
+              style={{ transformOrigin: "top right" }}
+              className="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-xl z-10 shadow-sm uppercase tracking-wider"
+            >
+              50% OFF
+            </motion.div>
             <div className="w-12 h-12 rounded-xl bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-600 font-bold text-xl mb-6 group-hover:scale-110 transition-transform">py</div>
             <h2 className="text-2xl font-black text-blue-950 mb-2">Python Fast-Track</h2>
             <p className="text-emerald-600 font-bold mb-4 tracking-wide uppercase text-xs">Data & Web Apps</p>
+            
+            <div className="flex items-baseline gap-2 mb-4">
+              <AnimatedPrice 
+                from={3999} 
+                to={1999} 
+                dropDelay={0.5}
+                className="text-3xl font-black text-emerald-600 tracking-tighter" 
+              />
+              <motion.span 
+                initial={{ opacity: 0, x: 15, filter: "blur(4px)" }}
+                animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.4, delay: 0.8 }}
+                className="text-sm text-slate-400 line-through font-bold"
+              >
+                ₹3,999
+              </motion.span>
+            </div>
+
             <p className="text-slate-600 mb-6 text-sm leading-relaxed flex-grow">
               Go from zero to deploying interactive data web apps in 8 weeks using purely Python. No prior coding experience required.
             </p>
@@ -68,9 +95,35 @@ export default function ApplyPage() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-white/60 backdrop-blur-xl border border-white/60 hover:border-orange-200 rounded-3xl p-6 md:p-8 shadow-lg shadow-blue-900/5 flex flex-col relative transition-all group"
           >
+            <motion.div 
+              animate={{ rotate: [0, -10, 10, -10, 10, 0] }} 
+              transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2, delay: 0.2 }}
+              style={{ transformOrigin: "top right" }}
+              className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-xl z-10 shadow-sm uppercase tracking-wider"
+            >
+              50% OFF
+            </motion.div>
             <div className="w-12 h-12 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600 font-bold text-xl mb-6 group-hover:scale-110 transition-transform">☕</div>
             <h2 className="text-2xl font-black text-blue-950 mb-2">Java Fullstack</h2>
             <p className="text-orange-600 font-bold mb-4 tracking-wide uppercase text-xs">Enterprise Architecture</p>
+            
+            <div className="flex items-baseline gap-2 mb-4">
+              <AnimatedPrice 
+                from={3999} 
+                to={1999} 
+                dropDelay={0.6}
+                className="text-3xl font-black text-orange-600 tracking-tighter" 
+              />
+              <motion.span 
+                initial={{ opacity: 0, x: 15, filter: "blur(4px)" }}
+                animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+                transition={{ duration: 0.4, delay: 0.9 }}
+                className="text-sm text-slate-400 line-through font-bold"
+              >
+                ₹3,999
+              </motion.span>
+            </div>
+
             <p className="text-slate-600 mb-6 text-sm leading-relaxed flex-grow">
               Master enterprise-grade architecture with Spring Boot, Angular, and Microservices in our 12-week intensive track.
             </p>
@@ -97,9 +150,14 @@ export default function ApplyPage() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="bg-gradient-to-br from-white/80 to-blue-50/50 backdrop-blur-xl border border-blue-200/60 rounded-3xl p-6 md:p-8 shadow-xl shadow-blue-500/10 flex flex-col relative overflow-hidden group"
           >
-            <div className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-xl z-10 shadow-sm uppercase tracking-wider">
+            <motion.div 
+              animate={{ rotate: [0, -10, 10, -10, 10, 0] }} 
+              transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2, delay: 0.4 }}
+              style={{ transformOrigin: "top right" }}
+              className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-xl z-10 shadow-sm uppercase tracking-wider"
+            >
               Free (Limited)
-            </div>
+            </motion.div>
             <div className="w-12 h-12 rounded-xl bg-blue-100 border border-blue-200 flex items-center justify-center text-blue-600 font-bold text-xl mb-6 group-hover:scale-110 transition-transform">🎯</div>
             <h2 className="text-2xl font-black text-blue-950 mb-2">Mock Interviews</h2>
             <p className="text-blue-600 font-bold mb-4 tracking-wide uppercase text-xs">Master the Interview</p>

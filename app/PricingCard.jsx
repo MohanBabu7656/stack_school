@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import AnimatedPrice from './AnimatedPrice';
 
 export default function PricingCard({ courseName = "Full Course", className = "" }) {
   return (
@@ -25,8 +26,21 @@ export default function PricingCard({ courseName = "Full Course", className = ""
         <p className="text-slate-600 font-medium text-sm mb-6">Start your career at an unbeatable price.</p>
         
         <div className="flex items-baseline gap-3 mb-6">
-          <span className="text-4xl md:text-5xl font-black text-blue-950 tracking-tighter">₹1,999</span>
-          <span className="text-xl text-slate-400 line-through font-bold">₹3,999</span>
+          <AnimatedPrice 
+            from={3999} 
+            to={1999} 
+            dropDelay={0.5}
+            className="text-4xl md:text-5xl font-black text-blue-950 tracking-tighter" 
+          />
+          <motion.span 
+            initial={{ opacity: 0, x: 15, filter: "blur(4px)" }}
+            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.4, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="text-xl text-slate-400 line-through font-bold"
+          >
+            ₹3,999
+          </motion.span>
           <span className="text-emerald-600 font-black text-sm bg-emerald-50 px-2 py-0.5 rounded-lg border border-emerald-100">50% OFF</span>
         </div>
         
