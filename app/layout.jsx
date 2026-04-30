@@ -14,6 +14,10 @@ export const metadata = {
   title: 'Stack School | Best Python & Java Fullstack Coding Bootcamp | 100% Placement Support',
   description: 'Join Stack School, the premier coding bootcamp for Python Data/Web and Java Fullstack development. Get 1-on-1 mentorship, lifetime career support, and job-ready skills in 8-12 weeks.',
   metadataBase: new URL('https://stackschool.in'),
+  icons: {
+    icon: '/stack_school.png',
+    apple: '/stack_school.png',
+  },
   keywords: ['coding bootcamp', 'python course', 'java fullstack', 'web development', 'career transition', 'tech jobs india', 'mentorship'],
   openGraph: {
     title: 'Stack School | Best Python & Java Fullstack Coding Bootcamp',
