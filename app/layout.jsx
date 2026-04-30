@@ -45,7 +45,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`font-sans ${geist.variable}`}>
-      <body className="min-h-screen bg-slate-50 font-sans flex flex-col relative overflow-x-hidden selection:bg-orange-500 selection:text-white">
+      <body className="min-h-screen bg-slate-50 font-sans flex flex-col relative overflow-x-clip selection:bg-orange-500 selection:text-white">
         
 
 

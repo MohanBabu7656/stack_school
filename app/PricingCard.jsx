@@ -45,6 +45,23 @@ export default function PricingCard({ courseName = "Full Course", className = ""
           </div>
         </div>
         
+        <div className="space-y-3 mb-6 pt-4 border-t border-slate-100">
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">What's Included</p>
+          {[
+            'Industry-Recognized Certificate',
+            'Lifetime Course Access & Updates',
+            '1-on-1 Mentor Support',
+            '100% Placement Assistance'
+          ].map((feature, i) => (
+            <div key={i} className="flex items-center gap-3">
+              <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0">
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span className="text-sm font-bold text-slate-700">{feature}</span>
+            </div>
+          ))}
+        </div>
+        
         <div className="bg-gradient-to-br from-blue-950 to-blue-900 rounded-2xl p-5 mb-8 shadow-lg shadow-blue-950/20">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-xl">🤝</span>

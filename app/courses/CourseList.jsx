@@ -67,6 +67,10 @@ export default function CourseList() {
             <span className="text-sm text-slate-400 line-through font-bold">₹3,999</span>
           </div>
 
+          <div className="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-lg inline-block mb-4 border border-emerald-200 relative z-10 w-fit">
+            📅 New Batches Start Every Month
+          </div>
+
           <p className="text-slate-600 font-medium mb-8 relative z-10">Go from zero to deploying interactive data web apps in 8 weeks.</p>
           
           <div className="space-y-4 mb-10 flex-grow relative z-10">
@@ -109,6 +113,10 @@ export default function CourseList() {
           <div className="flex items-baseline gap-2 mb-4 relative z-10">
             <span className="text-2xl font-black text-orange-600 tracking-tighter">₹1,999</span>
             <span className="text-sm text-slate-400 line-through font-bold">₹3,999</span>
+          </div>
+
+          <div className="bg-orange-50 text-orange-700 text-xs font-bold px-3 py-1.5 rounded-lg inline-block mb-4 border border-orange-200 relative z-10 w-fit">
+            📅 New Batches Start Every Month
           </div>
 
           <p className="text-slate-600 font-medium mb-8 relative z-10">Master Enterprise-Grade Architecture with Spring Boot & Angular.</p>

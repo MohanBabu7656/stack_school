@@ -23,7 +23,8 @@ export default function FloatingNav() {
 
   const menuItems = [
     { label: 'Courses', href: '/courses', icon: '📚', color: 'bg-emerald-500' },
-    { label: 'Job Updates', href: 'https://chat.whatsapp.com/GtHCxt09o0pELkSas7qBAO', icon: '💼', color: 'bg-green-600' },
+    { label: 'Community Group', href: 'https://chat.whatsapp.com/GtHCxt09o0pELkSas7qBAO', icon: '💬', color: 'bg-[#25D366]' },
+    { label: 'Job Channel', href: 'https://whatsapp.com/channel/0029Vb7VqJz2phHOL3Qvw02i', icon: '💼', color: 'bg-teal-600' },
     { label: 'Contact Us', href: '/contact', icon: '📞', color: 'bg-purple-600' },
     { label: 'Apply Now', href: '/apply', icon: '🚀', color: 'bg-blue-600' },
     { label: 'Refer & Earn', href: '/referral', icon: '🤝', color: 'bg-orange-500' },

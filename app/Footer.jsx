@@ -36,7 +36,16 @@ export default function Footer() {
             className="flex items-center justify-center md:justify-start gap-2 text-emerald-600 hover:text-emerald-700 font-bold transition-colors mt-2"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
-            <span>Daily Job Updates</span>
+            <span>Community Group</span>
+          </a>
+          <a 
+            href="https://whatsapp.com/channel/0029Vb7VqJz2phHOL3Qvw02i" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center justify-center md:justify-start gap-2 text-teal-600 hover:text-teal-700 font-bold transition-colors mt-1"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
+            <span>Job Updates Channel</span>
           </a>
         </div>
       </div>

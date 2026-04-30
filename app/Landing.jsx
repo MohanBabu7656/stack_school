@@ -90,7 +90,7 @@ export default function Landing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.9, type: 'spring' }}
             className="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-            Master modern web development and build real-world projects. Choose us, and we will mold your raw potential into a polished, highly sought-after engineering profile perfectly suited for top tech companies.
+            Master modern web development and build real-world projects. No prior coding experience required. Choose us, and we will mold your raw potential into a polished, highly sought-after engineering profile perfectly suited for top tech companies.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

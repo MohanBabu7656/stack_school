@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import TrackedEnrollButton from '../../TrackedEnrollButton';
 import SyllabusViewer from './SyllabusViewer';
 import PricingCard from '../../PricingCard';
+import QuickWhatsAppForm from '../../QuickWhatsAppForm';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -22,7 +23,7 @@ const itemVariants = {
 
 export default function PythonPageContent() {
   return (
-    <div className="flex-grow w-full min-h-screen relative overflow-hidden flex flex-col items-center justify-center pt-24 pb-16 px-4 md:px-8">
+    <div className="flex-grow w-full min-h-screen relative flex flex-col items-center justify-start pt-24 pb-16 px-4 md:px-8">
       {/* Background Orbs */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/10 blur-[120px] rounded-full"></div>
@@ -36,7 +37,7 @@ export default function PythonPageContent() {
         className="max-w-7xl w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
       >
         {/* Left Column: Hero & CTA (Sticky on Desktop) */}
-        <div className="lg:col-span-5 flex flex-col justify-start pt-4 lg:pt-8 lg:sticky lg:top-32 lg:pb-8 z-20">
+        <div className="lg:col-span-5 flex flex-col justify-start pt-4 lg:pt-0 lg:sticky lg:top-24 lg:pb-8 z-20">
           <motion.div variants={itemVariants} className="flex items-center gap-4 mb-8">
             <div className="w-16 h-16 rounded-2xl bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-600 font-bold text-2xl shadow-[0_0_30px_rgba(16,185,129,0.15)]">
               py
@@ -56,20 +57,8 @@ export default function PythonPageContent() {
             Go from zero to deploying interactive data web apps in 8 weeks—using purely Python.
           </motion.p>
           
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
-            <TrackedEnrollButton 
-              courseName="Python Fast-Track" 
-              href="/apply" 
-              className="flex-1 min-h-[56px] px-6 py-3.5 sm:px-8 sm:py-4 bg-emerald-600 text-white font-black rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:-translate-y-1 transition-all duration-300 text-center flex items-center justify-center text-base sm:text-lg"
-            >
-              Apply Now
-            </TrackedEnrollButton>
-            <Link 
-              href="/courses" 
-              className="flex-1 min-h-[56px] px-6 py-3.5 sm:px-8 sm:py-4 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl hover:bg-slate-50 shadow-sm transition-colors text-center flex items-center justify-center text-base sm:text-lg"
-            >
-              Back to Courses
-            </Link>
+          <motion.div variants={itemVariants} className="w-full">
+            <QuickWhatsAppForm courseName="Python Fast-Track" />
           </motion.div>
           
           <motion.p variants={itemVariants} className="mt-8 text-sm text-slate-500 font-medium text-center sm:text-left">
@@ -97,11 +86,19 @@ export default function PythonPageContent() {
                 Download PDF
               </a>
             </div>
+            
+            <div className="mb-6 flex flex-wrap items-center gap-2 relative z-10">
+              <span className="text-sm font-bold text-slate-500 mr-2">Tools you'll master:</span>
+              {['VS Code', 'Git', 'MySQL', 'Streamlit', 'Python'].map(tool => (
+                <span key={tool} className="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-lg border border-emerald-100">{tool}</span>
+              ))}
+            </div>
+
             <div className="relative z-10">
               <SyllabusViewer />
             </div>
           </motion.div>
-
+          
           <PricingCard courseName="Python Fast-Track" />
         </div>
       </motion.div>
