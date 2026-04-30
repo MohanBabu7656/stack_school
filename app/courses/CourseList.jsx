@@ -44,10 +44,10 @@ export default function CourseList() {
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory hide-scrollbar relative z-10 w-auto md:w-full scroll-smooth"
+        className="flex items-stretch overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory hide-scrollbar relative z-10 w-auto md:w-full scroll-smooth"
       >
         {/* Python Course Card */}
-        <motion.div variants={itemVariants} className="w-[80vw] sm:w-full shrink-0 snap-center min-w-0 group relative rounded-3xl bg-white/60 backdrop-blur-xl border border-white/60 p-6 md:p-8 hover:border-emerald-200 hover:shadow-emerald-500/20 transition-all duration-500 overflow-hidden shadow-lg flex flex-col h-full">
+        <motion.div variants={itemVariants} className="w-[80vw] sm:w-full shrink-0 snap-center min-w-0 group relative rounded-3xl bg-white/60 backdrop-blur-xl border border-white/60 p-6 md:p-8 hover:border-emerald-200 hover:shadow-emerald-500/20 transition-all duration-500 overflow-hidden shadow-lg flex flex-col h-auto self-stretch">
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           <div className="absolute -top-24 -right-24 w-48 h-48 bg-emerald-500/10 blur-[80px] rounded-full group-hover:bg-emerald-500/20 transition-all duration-500 pointer-events-none"></div>
           
@@ -95,7 +95,7 @@ export default function CourseList() {
         </motion.div>
 
         {/* Java Course Card */}
-        <motion.div variants={itemVariants} className="w-[80vw] sm:w-full shrink-0 snap-center min-w-0 group relative rounded-3xl bg-white/60 backdrop-blur-xl border border-white/60 p-6 md:p-8 hover:border-orange-200 hover:shadow-orange-500/20 transition-all duration-500 overflow-hidden shadow-lg flex flex-col h-full">
+        <motion.div variants={itemVariants} className="w-[80vw] sm:w-full shrink-0 snap-center min-w-0 group relative rounded-3xl bg-white/60 backdrop-blur-xl border border-white/60 p-6 md:p-8 hover:border-orange-200 hover:shadow-orange-500/20 transition-all duration-500 overflow-hidden shadow-lg flex flex-col h-auto self-stretch">
           <div className="absolute inset-0 bg-gradient-to-br from-orange-100/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-orange-500/10 blur-[80px] rounded-full group-hover:bg-orange-500/20 transition-all duration-500 pointer-events-none"></div>
           
@@ -134,6 +134,10 @@ export default function CourseList() {
               <svg className="w-5 h-5 mr-3 text-orange-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               <span className="font-medium text-sm">Advanced Database Design</span>
             </div>
+            <div className="flex items-start text-slate-700 transition-colors duration-300">
+              <svg className="w-5 h-5 mr-3 text-orange-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span className="font-medium text-sm">Real-world Enterprise Projects</span>
+            </div>
           </div>
           
           <Link href="/courses/java" className="relative z-10 w-full py-4 bg-white hover:bg-orange-50 text-blue-950 border-2 border-blue-950 hover:text-orange-700 hover:border-orange-500 font-black rounded-xl text-center transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1 overflow-hidden group/btn flex items-center justify-center gap-2">
@@ -143,7 +147,7 @@ export default function CourseList() {
         </motion.div>
 
         {/* Mock Interviews Card */}
-        <motion.div variants={itemVariants} className="w-[80vw] sm:w-full shrink-0 snap-center min-w-0 group relative rounded-3xl bg-white/60 backdrop-blur-xl border border-white/60 p-6 md:p-8 hover:border-blue-200 hover:shadow-blue-500/20 transition-all duration-500 overflow-hidden shadow-lg flex flex-col h-full">
+        <motion.div variants={itemVariants} className="w-[80vw] sm:w-full shrink-0 snap-center min-w-0 group relative rounded-3xl bg-white/60 backdrop-blur-xl border border-white/60 p-6 md:p-8 hover:border-blue-200 hover:shadow-blue-500/20 transition-all duration-500 overflow-hidden shadow-lg flex flex-col h-auto self-stretch">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-100/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-48 h-48 bg-blue-500/10 blur-[80px] rounded-full group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
           
@@ -171,6 +175,18 @@ export default function CourseList() {
             <div className="flex items-start text-slate-700 transition-colors duration-300">
               <svg className="w-5 h-5 mr-3 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
               <span className="font-medium text-sm">Detailed Readiness Report</span>
+            </div>
+            <div className="flex items-start text-slate-700 transition-colors duration-300">
+              <svg className="w-5 h-5 mr-3 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span className="font-medium text-sm">Resume & Profile Review</span>
+            </div>
+            <div className="flex items-start text-slate-700 transition-colors duration-300">
+              <svg className="w-5 h-5 mr-3 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span className="font-medium text-sm">Industry Expert Feedback</span>
+            </div>
+            <div className="flex items-start text-slate-700 transition-colors duration-300">
+              <svg className="w-5 h-5 mr-3 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span className="font-medium text-sm">Placement-Style Practice</span>
             </div>
           </div>
           

@@ -34,31 +34,39 @@ export default function MockInterviewsPage() {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Highlights Card */}
-          <div className="bg-white/80 p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <h3 className="text-xl font-bold text-blue-950 mb-4 flex items-center"><span className="mr-2">🚀</span> Program Highlights</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <span className="text-orange-500 font-bold mr-3 mt-0.5">1️⃣</span>
-                <div>
-                  <strong className="block text-slate-800">Technical Mock Interviews</strong>
-                  <span className="text-sm text-slate-600">One-on-one sessions focusing on Java, Python, Data Structures, and System Design.</span>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="text-orange-500 font-bold mr-3 mt-0.5">2️⃣</span>
-                <div>
-                  <strong className="block text-slate-800">HR & Soft Skills Rounds</strong>
-                  <span className="text-sm text-slate-600">Polish your communication, body language, and confidence with industry-standard HR questions.</span>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="text-orange-500 font-bold mr-3 mt-0.5">3️⃣</span>
-                <div>
-                  <strong className="block text-slate-800">Live Coding Challenges</strong>
-                  <span className="text-sm text-slate-600">Solve real-world, industry-level problems in a timed environment (LeetCode/HackerRank style).</span>
-                </div>
-              </li>
-            </ul>
+          <div className="bg-white/80 p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-blue-950 mb-4 flex items-center"><span className="mr-2">🚀</span> Program Highlights</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <span className="text-orange-500 font-bold mr-3 mt-0.5">1️⃣</span>
+                  <div>
+                    <strong className="block text-slate-800">Technical Mock Interviews</strong>
+                    <span className="text-sm text-slate-600">One-on-one sessions focusing on Java, Python, Data Structures, and System Design.</span>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-500 font-bold mr-3 mt-0.5">2️⃣</span>
+                  <div>
+                    <strong className="block text-slate-800">HR & Soft Skills Rounds</strong>
+                    <span className="text-sm text-slate-600">Polish your communication, body language, and confidence with industry-standard HR questions.</span>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-500 font-bold mr-3 mt-0.5">3️⃣</span>
+                  <div>
+                    <strong className="block text-slate-800">Live Coding Challenges</strong>
+                    <span className="text-sm text-slate-600">Solve real-world, industry-level problems in a timed environment (LeetCode/HackerRank style).</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 mt-6 md:mt-auto">
+              <h4 className="font-bold text-slate-800 mb-2 flex items-center"><span className="mr-2">💼</span> Target Roles</h4>
+              <p className="text-sm text-slate-600 mb-1"><strong>Profiles:</strong> Software Engineer, Backend, Fullstack</p>
+              <p className="text-sm text-slate-600"><strong>Level:</strong> Freshers & up to 3 Years Experience</p>
+            </div>
           </div>
 
           {/* Details & Schedule Card */}

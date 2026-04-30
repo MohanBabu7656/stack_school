@@ -57,8 +57,14 @@ export default function PythonPageContent() {
             Go from zero to deploying interactive data web apps in 8 weeks—using purely Python.
           </motion.p>
           
-          <motion.div variants={itemVariants} className="w-full">
+          <motion.div variants={itemVariants} className="w-full flex flex-col gap-3">
             <QuickWhatsAppForm courseName="Python Fast-Track" />
+            <Link 
+              href="/courses" 
+              className="w-full py-3.5 bg-transparent text-slate-500 hover:text-blue-950 border-2 border-slate-300 hover:border-blue-950 font-black rounded-xl text-center transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex items-center justify-center text-base"
+            >
+              Back to Courses
+            </Link>
           </motion.div>
           
           <motion.p variants={itemVariants} className="mt-8 text-sm text-slate-500 font-medium text-center sm:text-left">
