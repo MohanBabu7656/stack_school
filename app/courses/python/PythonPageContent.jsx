@@ -35,8 +35,8 @@ export default function PythonPageContent() {
         animate="show"
         className="max-w-7xl w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
       >
-        {/* Left Column: Hero & CTA */}
-        <div className="lg:col-span-5 flex flex-col justify-center h-full pt-8">
+        {/* Left Column: Hero & CTA (Sticky on Desktop) */}
+        <div className="lg:col-span-5 flex flex-col justify-start pt-4 lg:pt-8 lg:sticky lg:top-32 lg:pb-8 z-20">
           <motion.div variants={itemVariants} className="flex items-center gap-4 mb-8">
             <div className="w-16 h-16 rounded-2xl bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-600 font-bold text-2xl shadow-[0_0_30px_rgba(16,185,129,0.15)]">
               py
@@ -48,25 +48,25 @@ export default function PythonPageContent() {
             </div>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-black text-blue-950 mb-6 tracking-tight leading-tight">
+          <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-950 mb-6 tracking-tight leading-tight">
             Python Fast-Track: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-600">Data & Web</span>
           </motion.h1>
           
-          <motion.p variants={itemVariants} className="text-lg md:text-xl text-slate-700 font-medium mb-10 leading-relaxed">
+          <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-slate-700 font-medium mb-8 lg:mb-10 leading-relaxed">
             Go from zero to deploying interactive data web apps in 8 weeks—using purely Python.
           </motion.p>
           
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full">
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
             <TrackedEnrollButton 
               courseName="Python Fast-Track" 
               href="/apply" 
-              className="flex-1 min-h-[56px] px-8 py-4 bg-emerald-600 text-white font-black rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:-translate-y-1 transition-all duration-300 text-center flex items-center justify-center text-lg"
+              className="flex-1 min-h-[56px] px-6 py-3.5 sm:px-8 sm:py-4 bg-emerald-600 text-white font-black rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:-translate-y-1 transition-all duration-300 text-center flex items-center justify-center text-base sm:text-lg"
             >
               Apply Now
             </TrackedEnrollButton>
             <Link 
               href="/courses" 
-              className="flex-1 min-h-[56px] px-8 py-4 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl hover:bg-slate-50 shadow-sm transition-colors text-center flex items-center justify-center text-lg"
+              className="flex-1 min-h-[56px] px-6 py-3.5 sm:px-8 sm:py-4 bg-white text-blue-950 border border-blue-200 font-bold rounded-xl hover:bg-slate-50 shadow-sm transition-colors text-center flex items-center justify-center text-base sm:text-lg"
             >
               Back to Courses
             </Link>

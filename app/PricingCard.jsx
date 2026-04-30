@@ -25,8 +25,8 @@ export default function PricingCard({ courseName = "Full Course", className = ""
         <p className="text-slate-600 font-medium text-sm mb-6">Start your career at an unbeatable price.</p>
         
         <div className="flex items-baseline gap-3 mb-6">
-          <span className="text-4xl md:text-5xl font-black text-blue-950 tracking-tighter">₹2,000</span>
-          <span className="text-xl text-slate-400 line-through font-bold">₹4,000</span>
+          <span className="text-4xl md:text-5xl font-black text-blue-950 tracking-tighter">₹1,999</span>
+          <span className="text-xl text-slate-400 line-through font-bold">₹3,999</span>
           <span className="text-emerald-600 font-black text-sm bg-emerald-50 px-2 py-0.5 rounded-lg border border-emerald-100">50% OFF</span>
         </div>
         
@@ -51,7 +51,7 @@ export default function PricingCard({ courseName = "Full Course", className = ""
             <p className="text-white font-black text-sm uppercase tracking-wider">Refer & Learn for FREE</p>
           </div>
           <p className="text-blue-100 text-xs font-medium leading-relaxed">
-            Get <span className="text-orange-400 font-black">₹500 Referral Bonus</span> for every friend who joins. Once you and your friend enroll, claim your bonus on our <Link href="/referral" className="text-white underline font-bold hover:text-orange-400 transition-colors">Referral Page</Link>!
+            Get <span className="text-orange-400 font-black">₹499 Referral Bonus</span> for every friend who joins. Once you and your friend enroll, claim your bonus on our <Link href="/referral" className="text-white underline font-bold hover:text-orange-400 transition-colors">Referral Page</Link>!
           </p>
         </div>
         

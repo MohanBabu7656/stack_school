@@ -55,7 +55,7 @@ export default function ReferralPage() {
             🤝 Referral Program
           </div>
           <h1 className="text-3xl md:text-5xl font-black text-blue-950 mb-4">Claim Your Bonus</h1>
-          <p className="text-slate-600 font-medium mb-8">Earn ₹500 for every friend who joins. Tell us who you referred!</p>
+          <p className="text-slate-600 font-medium mb-8">Earn ₹499 for every friend who joins. Tell us who you referred!</p>
 
           <div className="bg-orange-50 border border-orange-200 p-4 rounded-2xl flex items-start gap-4 text-left shadow-sm">
             <div className="bg-orange-500 text-white w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-bold">!</div>

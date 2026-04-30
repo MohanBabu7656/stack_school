@@ -63,8 +63,8 @@ export default function CourseList() {
           <h3 className="text-3xl font-black text-blue-950 mb-2 relative z-10 break-words">Python Data & Web</h3>
           
           <div className="flex items-baseline gap-2 mb-4 relative z-10">
-            <span className="text-2xl font-black text-emerald-600 tracking-tighter">₹2,000</span>
-            <span className="text-sm text-slate-400 line-through font-bold">₹4,000</span>
+            <span className="text-2xl font-black text-emerald-600 tracking-tighter">₹1,999</span>
+            <span className="text-sm text-slate-400 line-through font-bold">₹3,999</span>
           </div>
 
           <p className="text-slate-600 font-medium mb-8 relative z-10">Go from zero to deploying interactive data web apps in 8 weeks.</p>
@@ -107,8 +107,8 @@ export default function CourseList() {
           <h3 className="text-3xl font-black text-blue-950 mb-2 relative z-10 break-words">Java Fullstack</h3>
 
           <div className="flex items-baseline gap-2 mb-4 relative z-10">
-            <span className="text-2xl font-black text-orange-600 tracking-tighter">₹2,000</span>
-            <span className="text-sm text-slate-400 line-through font-bold">₹4,000</span>
+            <span className="text-2xl font-black text-orange-600 tracking-tighter">₹1,999</span>
+            <span className="text-sm text-slate-400 line-through font-bold">₹3,999</span>
           </div>
 
           <p className="text-slate-600 font-medium mb-8 relative z-10">Master Enterprise-Grade Architecture with Spring Boot & Angular.</p>
