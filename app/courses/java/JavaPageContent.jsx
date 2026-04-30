@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { track } from '@vercel/analytics';
+
 import TrackedEnrollButton from '../../TrackedEnrollButton';
 import PricingCard from '../../PricingCard';
 
@@ -90,7 +92,18 @@ export default function JavaPageContent() {
   ];
 
   const toggleAccordion = (id) => {
-    setActiveAccordion(activeAccordion === id ? null : id);
+    const newActiveId = activeAccordion === id ? null : id;
+    setActiveAccordion(newActiveId);
+
+    if (newActiveId !== null) {
+      const module = modules.find(m => m.id === newActiveId);
+      if (module) {
+        track('Syllabus Module Viewed', {
+          course: 'Java Fullstack',
+          module: module.title
+        });
+      }
+    }
   };
 
   return (
@@ -257,4 +270,3 @@ export default function JavaPageContent() {
     </div>
   );
 }
-

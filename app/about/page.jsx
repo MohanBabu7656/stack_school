@@ -1,10 +1,5 @@
 import React from 'react';
 
-export const metadata = {
-  title: 'About Us | Stack School',
-  description: 'Learn about Stack School’s mission and methodology.',
-};
-
 export default function AboutPage() {
   return (
     <main className="flex-grow px-4 py-20 md:py-32 flex flex-col items-center relative z-10">

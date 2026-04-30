@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { track } from '@vercel/analytics';
 import Link from 'next/link';
 
 export default function ReferralPage() {
@@ -29,6 +30,11 @@ export default function ReferralPage() {
     }
 
     const { referrerName, referrerEmail, referredCount, referredEmails } = formData;
+
+    // Track the event before redirecting
+    track('Referral Claim Submitted', {
+      referredCount: referredCount,
+    });
     
     // Construct the formatted WhatsApp message
     const text = `*Referral Bonus Claim*\n\n*Referrer Name:* ${referrerName}\n*Referrer Email:* ${referrerEmail}\n*Number of People Referred:* ${referredCount}\n*Referred Candidate Emails:* ${referredEmails}\n\n*Status:* Confirmed Enrolled ✅`;

@@ -78,7 +78,7 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "EducationalOrganization",
               "name": "Stack School",
               "url": "https://stackschool.in",
               "logo": "https://stackschool.in/stack_school.png",
@@ -91,22 +91,6 @@ export default function RootLayout({ children }) {
                 "contactType": "customer service",
                 "areaServed": "IN",
                 "availableLanguage": ["en", "tel", "hi"]
-              }
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "Stack School",
-              "url": "https://stackschool.in",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://stackschool.in/courses?q={search_term_string}",
-                "query-input": "required name=search_term_string"
               }
             })
           }}

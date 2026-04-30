@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { track } from '@vercel/analytics';
 
 export default function ContactPage() {
   // Set up the default details that will be pre-filled in the form
@@ -32,6 +33,11 @@ export default function ContactPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, phone, course, message } = formData;
+
+    // Track the event before redirecting
+    track('Contact Form Submitted', {
+      courseInterest: course,
+    });
     
     // Construct the formatted WhatsApp message
     const text = `*New Inquiry from Stack School Website*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Course Interested:* ${course}\n*Message:* ${message}`;

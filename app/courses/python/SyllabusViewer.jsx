@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { track } from '@vercel/analytics';
 
 export default function SyllabusViewer() {
   const [activeAccordion, setActiveAccordion] = useState(1);
@@ -106,7 +107,18 @@ export default function SyllabusViewer() {
   ];
 
   const toggleAccordion = (id) => {
-    setActiveAccordion(activeAccordion === id ? null : id);
+    const newActiveId = activeAccordion === id ? null : id;
+    setActiveAccordion(newActiveId);
+
+    if (newActiveId !== null) {
+      const phase = phases.find(p => p.id === newActiveId);
+      if (phase) {
+        track('Syllabus Module Viewed', {
+          course: 'Python Fast-Track',
+          module: phase.title
+        });
+      }
+    }
   };
 
   return (
